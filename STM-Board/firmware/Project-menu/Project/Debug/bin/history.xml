@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -g -nostartfiles -Map=Project.map -O0 --gc-sections -lm -lc -LC:\CooCox\CoIDE\configuration\ProgramData\Project -TC:\CooCox\CoIDE\configuration\ProgramData\Project/arm-gcc-link.ld -g">
+      <target file="Project.elf" lastModified="17d7ba839e2">
+         <source file="..\obj\spi.o" lastModified="17d7ba8294f"/>
+         <source file="..\obj\delay.o" lastModified="17d7ba8299a"/>
+         <source file="..\obj\i2c.o" lastModified="17d7ba82aa1"/>
+         <source file="..\obj\startup_stm32f4xx.o" lastModified="17d7ba82adb"/>
+         <source file="..\obj\ssd1306_tests.o" lastModified="17d7ba82bf9"/>
+         <source file="..\obj\main.o" lastModified="17d7ba82daf"/>
+         <source file="..\obj\stm32f4xx_rcc.o" lastModified="17d7ba82e3d"/>
+         <source file="..\obj\stm32f4xx_adc.o" lastModified="17d7ba82ebe"/>
+         <source file="..\obj\menu.o" lastModified="17d7ba83044"/>
+         <source file="..\obj\stm32f4xx_gpio.o" lastModified="17d7ba8309f"/>
+         <source file="..\obj\system_stm32f4xx.o" lastModified="17d7ba830ea"/>
+         <source file="..\obj\ssd1306_fonts.o" lastModified="17d7ba83148"/>
+         <source file="..\obj\game.o" lastModified="17d7ba832e6"/>
+         <source file="..\obj\stm32f4xx_spi.o" lastModified="17d7ba8335a"/>
+         <source file="..\obj\stm32f4xx_i2c.o" lastModified="17d7ba833c9"/>
+         <source file="..\obj\stm32f4xx_rng.o" lastModified="17d7ba8340e"/>
+         <source file="..\obj\misc.o" lastModified="17d7ba83450"/>
+         <source file="..\obj\ssd1306.o" lastModified="17d7ba836f5"/>
+         <source file="..\obj\stm32f4xx_tim.o" lastModified="17d7ba837c5"/>
+      </target>
+   </processor>
+</history>

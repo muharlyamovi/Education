@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m4 -mthumb -Wall -ffunction-sections -g -O0 -c -DSTM32F405RG -DSTM32F4XX -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -ID:\Study\STM32(2021)\STM-Board\firmware\Project-fin_copy -ID:\Study\STM32(2021)\STM-Board\firmware\Project-fin_copy\cmsis -ID:\Study\STM32(2021)\STM-Board\firmware\Project-fin_copy\cmsis_boot -ID:\Study\STM32(2021)\STM-Board\firmware\Project-fin_copy\lib -ID:\Study\STM32(2021)\STM-Board\firmware\Project-fin_copy\cmsis_lib\include -ID:\Study\STM32(2021)\STM-Board\firmware\Project-fin_copy\lib\src -ID:\Study\STM32(2021)\STM-Board\firmware -ID:\Study\STM32(2021)\STM-Board\firmware\Project-fin_copy\lib\inc -ID:\Study\STM32(2021)\STM-Board\firmware\Project-fin_copy\cmsis_lib">
+      <target file="spi.o" lastModified="17d7ba8294f">
+         <source file="..\..\..\lib\src\spi.c" lastModified="17a8c601364"/>
+      </target>
+      <target file="stm32f4xx_gpio.o" lastModified="17d7ba8309f">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_gpio.c" lastModified="17a3e19f86d"/>
+      </target>
+      <target file="menu.o" lastModified="17d7ba83044">
+         <source file="..\..\..\lib\src\menu.c" lastModified="17d6d29e647"/>
+      </target>
+      <target file="startup_stm32f4xx.o" lastModified="17d7ba82adb">
+         <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="17a3e19f826"/>
+      </target>
+      <target file="stm32f4xx_tim.o" lastModified="17d7ba837c5">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_tim.c" lastModified="17a3e1a55ff"/>
+      </target>
+      <target file="stm32f4xx_adc.o" lastModified="17d7ba82ebe">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_adc.c" lastModified="17a86330534"/>
+      </target>
+      <target file="i2c.o" lastModified="17d7ba82aa1">
+         <source file="..\..\..\..\..\..\..\FreeRtos(2021)\Lesson7\Lesson7\STM3240_41_G_EVAL\i2c.c" lastModified="17d7ba82565"/>
+      </target>
+      <target file="system_stm32f4xx.o" lastModified="17d7ba830ea">
+         <source file="..\..\..\cmsis_boot\system_stm32f4xx.c" lastModified="17a3e19f83d"/>
+      </target>
+      <target file="ssd1306.o" lastModified="17d7ba836f5">
+         <source file="..\..\..\lib\src\ssd1306.c" lastModified="17d7ba8258b"/>
+      </target>
+      <target file="ssd1306_fonts.o" lastModified="17d7ba83148">
+         <source file="..\..\..\lib\src\ssd1306_fonts.c" lastModified="17a78004367"/>
+      </target>
+      <target file="misc.o" lastModified="17d7ba83450">
+         <source file="..\..\..\cmsis_lib\source\misc.c" lastModified="17a7d2aef9d"/>
+      </target>
+      <target file="stm32f4xx_rng.o" lastModified="17d7ba8340e">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_rng.c" lastModified="17a8bdf5f07"/>
+      </target>
+      <target file="stm32f4xx_spi.o" lastModified="17d7ba8335a">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_spi.c" lastModified="17a7c77fec6"/>
+      </target>
+      <target file="stm32f4xx_rcc.o" lastModified="17d7ba82e3d">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="17a3e19f81d"/>
+      </target>
+      <target file="delay.o" lastModified="17d7ba8299a">
+         <source file="..\..\..\lib\src\delay.c" lastModified="17a8d6f9ebc"/>
+      </target>
+      <target file="stm32f4xx_i2c.o" lastModified="17d7ba833c9">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_i2c.c" lastModified="17d48fdb82f"/>
+      </target>
+      <target file="ssd1306_tests.o" lastModified="17d7ba82bf9">
+         <source file="..\..\..\lib\src\ssd1306_tests.c" lastModified="17a7d65de77"/>
+      </target>
+      <target file="game.o" lastModified="17d7ba832e6">
+         <source file="..\..\..\lib\src\game.c" lastModified="17d6d2545af"/>
+      </target>
+      <target file="main.o" lastModified="17d7ba82daf">
+         <source file="..\..\..\main.c" lastModified="17d6d27af46"/>
+      </target>
+   </processor>
+</history>
