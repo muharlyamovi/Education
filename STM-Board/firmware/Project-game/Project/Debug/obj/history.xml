@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m4 -mthumb -Wall -ffunction-sections -g -O0 -c -DSTM32F405RG -DSTM32F4XX -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -ID:\Study\STM32(2021)\STM-Board\firmware\Project-fin\cmsis_lib\include -ID:\Study\STM32(2021)\STM-Board\firmware\Project-fin\cmsis_lib -ID:\Study\STM32(2021)\STM-Board\firmware\Project-fin\cmsis -ID:\Study\STM32(2021)\STM-Board\firmware\Project-fin\cmsis_boot -ID:\Study\STM32(2021)\STM-Board\firmware\Project-fin\lib -ID:\Study\STM32(2021)\STM-Board\firmware\Project-fin -ID:\Study\STM32(2021)\STM-Board\firmware\Project-fin\lib\inc -ID:\Study\STM32(2021)\STM-Board\firmware">
+      <target file="ssd1306_tests.o" lastModified="17ce749e521">
+         <source file="..\..\..\lib\src\ssd1306_tests.c" lastModified="17a7d65de77"/>
+      </target>
+      <target file="stm32f4xx_gpio.o" lastModified="17ce749e918">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_gpio.c" lastModified="17a3e19f86d"/>
+      </target>
+      <target file="ssd1306_fonts.o" lastModified="17ce749e9c7">
+         <source file="..\..\..\lib\src\ssd1306_fonts.c" lastModified="17a78004367"/>
+      </target>
+      <target file="stm32f4xx_adc.o" lastModified="17ce749e8b5">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_adc.c" lastModified="17a86330534"/>
+      </target>
+      <target file="ssd1306.o" lastModified="17ce749eddf">
+         <source file="..\..\..\lib\src\ssd1306.c" lastModified="17a8ec38554"/>
+      </target>
+      <target file="stm32f4xx_tim.o" lastModified="17ce749eeb5">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_tim.c" lastModified="17a3e1a55ff"/>
+      </target>
+      <target file="system_stm32f4xx.o" lastModified="17ce749e96d">
+         <source file="..\..\..\cmsis_boot\system_stm32f4xx.c" lastModified="17a3e19f83d"/>
+      </target>
+      <target file="startup_stm32f4xx.o" lastModified="17ce749e4aa">
+         <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="17a3e19f826"/>
+      </target>
+      <target file="main.o" lastModified="17d3d0e55ba">
+         <source file="..\..\..\main.c" lastModified="17d3d0e50d2"/>
+      </target>
+      <target file="spi.o" lastModified="17ce749e418">
+         <source file="..\..\..\lib\src\spi.c" lastModified="17a8c601364"/>
+      </target>
+      <target file="stm32f4xx_spi.o" lastModified="17ce749eb48">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_spi.c" lastModified="17a7c77fec6"/>
+      </target>
+      <target file="game.o" lastModified="17ce749eaca">
+         <source file="..\..\..\lib\src\game.c" lastModified="17a8fd455d5"/>
+      </target>
+      <target file="stm32f4xx_rcc.o" lastModified="17ce749e82c">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="17a3e19f81d"/>
+      </target>
+      <target file="delay.o" lastModified="17ce749e470">
+         <source file="..\..\..\lib\src\delay.c" lastModified="17a8d6f9ebc"/>
+      </target>
+      <target file="stm32f4xx_rng.o" lastModified="17ce749eb93">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_rng.c" lastModified="17a8bdf5f07"/>
+      </target>
+      <target file="misc.o" lastModified="17ce749ebd7">
+         <source file="..\..\..\cmsis_lib\source\misc.c" lastModified="17a7d2aef9d"/>
+      </target>
+   </processor>
+</history>

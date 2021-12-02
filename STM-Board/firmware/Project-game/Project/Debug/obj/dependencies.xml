@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dependencies>
+   <includePath signature="/ID:\Study\STM32(2021)\STM-Board\firmware\Project-fin\cmsis_lib\include /ID:\Study\STM32(2021)\STM-Board\firmware\Project-fin\cmsis_lib /ID:\Study\STM32(2021)\STM-Board\firmware\Project-fin\cmsis /ID:\Study\STM32(2021)\STM-Board\firmware\Project-fin\cmsis_boot /ID:\Study\STM32(2021)\STM-Board\firmware\Project-fin\lib /ID:\Study\STM32(2021)\STM-Board\firmware\Project-fin /ID:\Study\STM32(2021)\STM-Board\firmware\Project-fin\lib\inc /ID:\Study\STM32(2021)\STM-Board\firmware">
+      <source file="..\..\..\cmsis_lib\source\stm32f4xx_gpio.c" lastModified="17a3e19f86d">
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\lib\inc\delay.h" lastModified="1505a40aafe">
+      </source>
+      <source file="..\..\..\lib\inc\ssd1306_tests.h" lastModified="17a7cad7063">
+         <include file="..\..\..\lib\inc\main.h"/>
+      </source>
+      <source file="..\..\..\cmsis_lib\include\misc.h" lastModified="17a7d2aef9c">
+         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\lib\src\ssd1306.c" lastModified="17a8ec38554">
+         <include file="..\..\..\lib\inc\ssd1306.h"/>
+      </source>
+      <source file="..\..\..\lib\src\ssd1306_fonts.c" lastModified="17a78004367">
+         <include file="..\..\..\lib\inc\ssd1306_fonts.h"/>
+      </source>
+      <source file="..\..\..\cmsis_lib\source\misc.c" lastModified="17a7d2aef9d">
+         <include file="..\..\..\cmsis_lib\include\misc.h"/>
+      </source>
+      <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="17a3e19f81d">
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\lib\inc\spi.h" lastModified="17a7c885ee3">
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_spi.h"/>
+         <include file="..\..\..\lib\inc\main.h"/>
+      </source>
+      <source file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h" lastModified="17a3e19f81c">
+         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\cmsis_lib\source\stm32f4xx_rng.c" lastModified="17a8bdf5f07">
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rng.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\cmsis_lib\source\stm32f4xx_adc.c" lastModified="17a86330534">
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_adc.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\lib\src\delay.c" lastModified="17a8d6f9ebc">
+         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
+         <include file="..\..\..\lib\inc\delay.h"/>
+      </source>
+      <source file="..\..\..\cmsis_lib\include\stm32f4xx_rng.h" lastModified="17a8bdf5f07">
+         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\cmsis_lib\include\stm32f4xx_adc.h" lastModified="17a86330533">
+         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\cmsis\core_cmFunc.h" lastModified="17a3e1a002d">
+      </source>
+      <source file="..\..\..\cmsis\core_cm4_simd.h" lastModified="17a3e1a0027">
+      </source>
+      <source file="..\..\..\lib\inc\main.h" lastModified="17a8d5c785e">
+         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_spi.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_tim.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_adc.h"/>
+         <include file="..\..\..\cmsis_lib\include\misc.h"/>
+         <include file="..\..\..\lib\inc\delay.h"/>
+         <include file="..\..\..\lib\inc\spi.h"/>
+         <include file="..\..\..\lib\inc\ssd1306_fonts.h"/>
+         <include file="..\..\..\lib\inc\ssd1306.h"/>
+         <include file="..\..\..\lib\inc\game.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rng.h"/>
+      </source>
+      <source file="..\..\..\cmsis_boot\stm32f4xx.h" lastModified="17a3e19fc18">
+         <include file="..\..\..\cmsis\core_cm4.h"/>
+         <include file="..\..\..\cmsis_boot\system_stm32f4xx.h"/>
+         <include file="..\..\..\cmsis_boot\stm32f4xx_conf.h"/>
+      </source>
+      <source file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h" lastModified="17a3e19f86c">
+         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\cmsis_lib\source\stm32f4xx_spi.c" lastModified="17a7c77fec6">
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_spi.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\cmsis_boot\stm32f4xx_conf.h" lastModified="17a3e1a426e">
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rng.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_spi.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_tim.h"/>
+         <include file="..\..\..\cmsis_lib\include\misc.h"/>
+      </source>
+      <source file="..\..\..\cmsis_lib\include\stm32f4xx_spi.h" lastModified="17a7c77fec5">
+         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\lib\inc\ssd1306_fonts.h" lastModified="17a0ab3deb0">
+         <include file="..\..\..\lib\inc\ssd1306_conf.h"/>
+      </source>
+      <source file="..\..\..\cmsis\core_cmInstr.h" lastModified="17a3e1a0035">
+      </source>
+      <source file="..\..\..\lib\src\ssd1306_tests.c" lastModified="17a7d65e647">
+         <include file="..\..\..\lib\inc\ssd1306.h"/>
+         <include file="..\..\..\lib\inc\ssd1306_tests.h"/>
+      </source>
+      <source file="..\..\..\lib\src\game.c" lastModified="17a8fd455d5">
+         <include file="..\..\..\lib\inc\main.h"/>
+         <include file="..\..\..\lib\inc\game.h"/>
+      </source>
+      <source file="..\..\..\lib\inc\ssd1306_conf.h" lastModified="17a7db48bb2">
+      </source>
+      <source file="..\..\..\lib\src\spi.c" lastModified="17a8c601364">
+         <include file="..\..\..\lib\inc\spi.h"/>
+      </source>
+      <source file="..\..\..\lib\inc\ssd1306.h" lastModified="17a7c8a8640">
+         <include file="..\..\..\lib\inc\main.h"/>
+         <include file="..\..\..\lib\inc\ssd1306_conf.h"/>
+         <include file="..\..\..\lib\inc\ssd1306_fonts.h"/>
+      </source>
+      <source file="..\..\..\cmsis\core_cm4.h" lastModified="17a3e19fc37">
+         <include file="..\..\..\cmsis\core_cmInstr.h"/>
+         <include file="..\..\..\cmsis\core_cmFunc.h"/>
+         <include file="..\..\..\cmsis\core_cm4_simd.h"/>
+      </source>
+      <source file="..\..\..\cmsis_boot\system_stm32f4xx.h" lastModified="17a3e19f845">
+      </source>
+      <source file="..\..\..\cmsis_lib\source\stm32f4xx_tim.c" lastModified="17a3e1a55ff">
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_tim.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="17a3e19f826">
+      </source>
+      <source file="..\..\..\cmsis_lib\include\stm32f4xx_tim.h" lastModified="17a3e1a55fe">
+         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\cmsis_boot\system_stm32f4xx.c" lastModified="17a3e19f83d">
+         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\lib\inc\game.h" lastModified="17a8bfe1726">
+         <include file="..\..\..\lib\inc\main.h"/>
+      </source>
+   </includePath>
+</dependencies>
