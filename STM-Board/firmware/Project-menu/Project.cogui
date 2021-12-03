@@ -14,17 +14,22 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
 <part id="1"/>
+<part id="2"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="i2c.c" partName="i2c.c" path="D:/Study/FreeRtos(2021)/Lesson7/Lesson7/STM3240_41_G_EVAL/i2c.c" title="i2c.c" tooltip="D:/Study/FreeRtos(2021)/Lesson7/Lesson7/STM3240_41_G_EVAL/i2c.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Project/lib/src/i2c.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="106" selectionOffset="176" selectionTopPixel="0"/>
-</editor>
-<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="D:/Study/STM32(2021)/STM-Board/firmware/Project-fin_copy/main.c" title="main.c" tooltip="D:/Study/STM32(2021)/STM-Board/firmware/Project-fin_copy/main.c" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="D:/Study/STM32(2021)/STM-Board/firmware/Project-menu/main.c" title="main.c" tooltip="D:/Study/STM32(2021)/STM-Board/firmware/Project-menu/main.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Project/main.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="973" selectionTopPixel="151"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="973" selectionTopPixel="451"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="menu.c" partName="menu.c" path="D:/Study/STM32(2021)/STM-Board/firmware/Project-menu/lib/src/menu.c" title="menu.c" tooltip="D:/Study/STM32(2021)/STM-Board/firmware/Project-menu/lib/src/menu.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Project/lib/src/menu.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="5" selectionOffset="2871" selectionTopPixel="1784"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="game.c" partName="game.c" path="D:/Study/STM32(2021)/STM-Board/firmware/Project-menu/lib/src/game.c" title="game.c" tooltip="D:/Study/STM32(2021)/STM-Board/firmware/Project-menu/lib/src/game.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Project/lib/src/game.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="12" selectionOffset="2872" selectionTopPixel="1428"/>
 </editor>
 </editors>
 <views>
@@ -45,7 +50,7 @@
 <element path="/Project/lib/src"/>
 </expanded>
 <selection>
-<element path="/Project/lib/inc/main.h"/>
+<element path="/Project/lib/src/game.c"/>
 </selection>
 </viewState>
 </view>
@@ -270,165 +275,162 @@
 <navigationHistory>
 <editors>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/lib/src/i2c.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/lib/src/spi.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/lib/src/ssd1306.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/main.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/lib/src/ssd1306_fonts.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/lib/src/ssd1306_tests.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/lib/src/game.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/lib/src/delay.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/lib/src/menu.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/lib/inc/main.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/lib/src/menu.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/lib/src/game.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/lib/src/i2c.c"/>
 </editors>
-<item historyLabel="main.c" index="3">
-<position info="not_deleted" x="1009" y="0"/>
-</item>
-<item historyLabel="i2c.c" index="0">
-<position info="not_deleted" x="2657" y="31"/>
-</item>
-<item historyLabel="main.c" index="3">
-<position info="not_deleted" x="966" y="0"/>
-</item>
-<item historyLabel="i2c.c" index="0">
-<position info="not_deleted" x="2311" y="46"/>
-</item>
-<item historyLabel="main.c" index="3">
-<position info="not_deleted" x="784" y="0"/>
-</item>
-<item historyLabel="i2c.c" index="0">
-<position info="not_deleted" x="2539" y="0"/>
-</item>
-<item historyLabel="main.c" index="3">
-<position info="not_deleted" x="1009" y="0"/>
-</item>
-<item historyLabel="i2c.c" index="0">
-<position info="not_deleted" x="2539" y="0"/>
-</item>
-<item historyLabel="main.c" index="3">
-<position info="not_deleted" x="1009" y="0"/>
-</item>
-<item historyLabel="ssd1306_fonts.c" index="4">
-<position/>
-</item>
-<item historyLabel="ssd1306_tests.c" index="5">
-<position/>
-</item>
-<item historyLabel="ssd1306.c" index="2">
-<position/>
-</item>
-<item historyLabel="ssd1306_tests.c" index="5">
-<position/>
-</item>
-<item historyLabel="ssd1306_fonts.c" index="4">
-<position/>
-</item>
-<item historyLabel="main.c" index="3">
-<position info="not_deleted" x="1009" y="0"/>
-</item>
-<item historyLabel="i2c.c" index="0">
-<position info="not_deleted" x="2539" y="0"/>
-</item>
-<item historyLabel="game.c" index="6">
-<position info="not_deleted" x="1632" y="81"/>
-</item>
-<item historyLabel="main.c" index="3">
-<position info="not_deleted" x="1009" y="0"/>
-</item>
-<item historyLabel="i2c.c" index="0">
-<position info="not_deleted" x="2901" y="0"/>
-</item>
-<item historyLabel="game.c" index="6">
-<position info="not_deleted" x="1632" y="81"/>
-</item>
-<item historyLabel="main.c" index="3">
-<position info="not_deleted" x="1009" y="0"/>
-</item>
-<item historyLabel="i2c.c" index="0">
-<position info="not_deleted" x="147" y="0"/>
-</item>
-<item historyLabel="delay.c" index="7">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="game.c" index="6">
-<position info="not_deleted" x="1632" y="81"/>
-</item>
-<item historyLabel="i2c.c" index="0">
-<position info="not_deleted" x="176" y="106"/>
-</item>
-<item historyLabel="main.c" index="3">
-<position info="not_deleted" x="376" y="0"/>
-</item>
-<item historyLabel="i2c.c" index="0">
-<position info="not_deleted" x="176" y="106"/>
-</item>
-<item historyLabel="main.c" index="3">
-<position info="not_deleted" x="376" y="0"/>
-</item>
-<item historyLabel="game.c" index="6">
+<item historyLabel="game.c" index="2">
 <position info="not_deleted" x="7831" y="0"/>
 </item>
 <item historyLabel="i2c.c" index="0">
 <position info="not_deleted" x="176" y="106"/>
 </item>
-<item historyLabel="menu.c" index="8">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="spi.c" index="1">
-<position info="not_deleted" x="1495" y="0"/>
-</item>
-<item historyLabel="ssd1306_fonts.c" index="4">
-<position info="not_deleted" x="64" y="0"/>
-</item>
-<item historyLabel="ssd1306_tests.c" index="5">
-<position info="not_deleted" x="4949" y="0"/>
-</item>
-<item historyLabel="ssd1306.c" index="2">
-<position info="not_deleted" x="38164" y="0"/>
-</item>
-<item historyLabel="ssd1306_tests.c" index="5">
-<position info="not_deleted" x="4949" y="0"/>
-</item>
-<item historyLabel="ssd1306.c" index="2">
-<position info="not_deleted" x="38164" y="0"/>
-</item>
-<item historyLabel="ssd1306_fonts.c" index="4">
-<position info="not_deleted" x="64" y="0"/>
-</item>
-<item historyLabel="spi.c" index="1">
-<position info="not_deleted" x="1495" y="0"/>
-</item>
-<item historyLabel="menu.c" index="8">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="i2c.c" index="0">
-<position info="not_deleted" x="176" y="106"/>
-</item>
-<item historyLabel="delay.c" index="7">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="i2c.c" index="0">
-<position info="not_deleted" x="176" y="106"/>
-</item>
-<item historyLabel="game.c" index="6">
-<position info="not_deleted" x="7831" y="0"/>
-</item>
-<item historyLabel="i2c.c" index="0">
-<position info="not_deleted" x="176" y="106"/>
-</item>
-<item historyLabel="main.c" index="3">
+<item historyLabel="main.c" index="1">
 <position info="not_deleted" x="726" y="0"/>
 </item>
 <item historyLabel="i2c.c" index="0">
 <position info="not_deleted" x="176" y="106"/>
 </item>
-<item historyLabel="main.c" index="3">
+<item historyLabel="main.c" index="1">
 <position info="not_deleted" x="726" y="0"/>
 </item>
-<item historyLabel="main.h" index="9">
+<item historyLabel="main.h" index="3">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item active="true" historyLabel="main.c" index="3">
+<item historyLabel="main.c" index="1">
 <position/>
+</item>
+<item historyLabel="menu.c" index="4">
+<position info="not_deleted" x="1540" y="4"/>
+</item>
+<item historyLabel="main.c" index="1">
+<position info="not_deleted" x="988" y="0"/>
+</item>
+<item historyLabel="menu.c" index="4">
+<position info="not_deleted" x="1540" y="4"/>
+</item>
+<item historyLabel="game.c" index="5">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="main.c" index="1">
+<position info="not_deleted" x="988" y="0"/>
+</item>
+<item historyLabel="game.c" index="5">
+<position/>
+</item>
+<item historyLabel="menu.c" index="4">
+<position info="not_deleted" x="1897" y="9"/>
+</item>
+<item historyLabel="main.c" index="1">
+<position info="not_deleted" x="1029" y="0"/>
+</item>
+<item historyLabel="menu.c" index="4">
+<position info="not_deleted" x="1932" y="0"/>
+</item>
+<item historyLabel="main.c" index="1">
+<position info="not_deleted" x="1186" y="11"/>
+</item>
+<item historyLabel="menu.c" index="4">
+<position info="not_deleted" x="3219" y="0"/>
+</item>
+<item historyLabel="main.c" index="1">
+<position info="not_deleted" x="1186" y="11"/>
+</item>
+<item historyLabel="menu.c" index="4">
+<position info="not_deleted" x="1896" y="15"/>
+</item>
+<item historyLabel="main.c" index="1">
+<position info="not_deleted" x="1190" y="0"/>
+</item>
+<item historyLabel="menu.c" index="4">
+<position info="not_deleted" x="1743" y="0"/>
+</item>
+<item historyLabel="main.c" index="1">
+<position info="not_deleted" x="1190" y="0"/>
+</item>
+<item historyLabel="menu.c" index="4">
+<position info="not_deleted" x="1743" y="0"/>
+</item>
+<item historyLabel="main.c" index="1">
+<position info="not_deleted" x="1029" y="171"/>
+</item>
+<item historyLabel="menu.c" index="4">
+<position info="not_deleted" x="1868" y="0"/>
+</item>
+<item historyLabel="game.c" index="5">
+<position/>
+</item>
+<item historyLabel="main.c" index="1">
+<position info="not_deleted" x="1029" y="171"/>
+</item>
+<item historyLabel="menu.c" index="4">
+<position info="not_deleted" x="1868" y="0"/>
+</item>
+<item historyLabel="i2c.c" index="6">
+<position info="not_deleted" x="176" y="106"/>
+</item>
+<item historyLabel="main.c" index="1">
+<position info="not_deleted" x="973" y="0"/>
+</item>
+<item historyLabel="game.c" index="5">
+<position/>
+</item>
+<item historyLabel="main.c" index="1">
+<position info="not_deleted" x="973" y="0"/>
+</item>
+<item historyLabel="i2c.c" index="6">
+<position info="not_deleted" x="176" y="106"/>
+</item>
+<item historyLabel="main.c" index="1">
+<position info="not_deleted" x="973" y="0"/>
+</item>
+<item historyLabel="menu.c" index="4">
+<position info="not_deleted" x="1911" y="0"/>
+</item>
+<item historyLabel="menu.c" index="4">
+<position info="not_deleted" x="1172" y="0"/>
+</item>
+<item historyLabel="menu.c" index="4">
+<position info="not_deleted" x="3268" y="9"/>
+</item>
+<item historyLabel="menu.c" index="4">
+<position info="not_deleted" x="1542" y="0"/>
+</item>
+<item historyLabel="menu.c" index="4">
+<position info="not_deleted" x="1762" y="0"/>
+</item>
+<item historyLabel="main.c" index="1">
+<position info="not_deleted" x="973" y="0"/>
+</item>
+<item historyLabel="menu.c" index="4">
+<position info="not_deleted" x="1762" y="0"/>
+</item>
+<item historyLabel="main.c" index="1">
+<position info="not_deleted" x="973" y="0"/>
+</item>
+<item historyLabel="menu.c" index="4">
+<position info="not_deleted" x="1762" y="0"/>
+</item>
+<item historyLabel="main.c" index="1">
+<position info="not_deleted" x="973" y="0"/>
+</item>
+<item historyLabel="menu.c" index="4">
+<position info="not_deleted" x="1762" y="0"/>
+</item>
+<item historyLabel="menu.c" index="4">
+<position info="not_deleted" x="2873" y="0"/>
+</item>
+<item historyLabel="main.c" index="1">
+<position info="not_deleted" x="973" y="0"/>
+</item>
+<item historyLabel="menu.c" index="4">
+<position info="not_deleted" x="2871" y="5"/>
+</item>
+<item active="true" historyLabel="main.c" index="1">
+<position info="not_deleted" x="973" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -437,6 +439,12 @@
 <actionBarAdvisor/>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="game.c" tooltip="Project/lib/src/game.c">
+<persistable path="/Project/lib/src/game.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="menu.c" tooltip="Project/lib/src/menu.c">
+<persistable path="/Project/lib/src/menu.c"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.h" tooltip="Project/lib/inc/main.h">
 <persistable path="/Project/lib/inc/main.h"/>
 </file>
@@ -452,14 +460,8 @@
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="spi.c" tooltip="Project/lib/src/spi.c">
 <persistable path="/Project/lib/src/spi.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="menu.c" tooltip="Project/lib/src/menu.c">
-<persistable path="/Project/lib/src/menu.c"/>
-</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="delay.c" tooltip="Project/lib/src/delay.c">
 <persistable path="/Project/lib/src/delay.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="game.c" tooltip="Project/lib/src/game.c">
-<persistable path="/Project/lib/src/game.c"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="Project/main.c">
 <persistable path="/Project/main.c"/>

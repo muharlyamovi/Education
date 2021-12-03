@@ -16,8 +16,8 @@
 <attrib name="registered" value="true"/>
 <attrib name="path" value="/Project/lib/src/ssd1306.c"/>
 <attrib name="org.eclipse.cdt.debug.core.sourceHandle" value="C:\Users\Muharlyamov\Desktop\Study\Project\lib\src\ssd1306.c"/>
-<attrib name="org.eclipse.cdt.debug.core.ignoreCount" value="0"/>
 <attrib name="org.eclipse.debug.core.enabled" value="false"/>
+<attrib name="org.eclipse.cdt.debug.core.ignoreCount" value="0"/>
 </marker>
 </breakpoint>
 <breakpoint enabled="false" persistant="true" registered="true">
@@ -36,8 +36,8 @@
 <attrib name="registered" value="true"/>
 <attrib name="path" value="/Project/lib/src/ssd1306.c"/>
 <attrib name="org.eclipse.cdt.debug.core.sourceHandle" value="C:\Users\Muharlyamov\Desktop\Study\Project\lib\src\ssd1306.c"/>
-<attrib name="org.eclipse.cdt.debug.core.ignoreCount" value="0"/>
 <attrib name="org.eclipse.debug.core.enabled" value="false"/>
+<attrib name="org.eclipse.cdt.debug.core.ignoreCount" value="0"/>
 </marker>
 </breakpoint>
 <breakpoint enabled="false" persistant="true" registered="true">
@@ -57,8 +57,8 @@
 <attrib name="registered" value="true"/>
 <attrib name="path" value="/Project/main.c"/>
 <attrib name="org.eclipse.cdt.debug.core.sourceHandle" value="C:\Users\Muharlyamov\Desktop\Study\Project\main.c"/>
-<attrib name="org.eclipse.debug.core.enabled" value="false"/>
 <attrib name="org.eclipse.cdt.debug.core.ignoreCount" value="0"/>
+<attrib name="org.eclipse.debug.core.enabled" value="false"/>
 </marker>
 </breakpoint>
 <breakpoint enabled="false" persistant="true" registered="true">
@@ -77,8 +77,8 @@
 <attrib name="registered" value="true"/>
 <attrib name="path" value="/Project/lib/src/delay.c"/>
 <attrib name="org.eclipse.cdt.debug.core.sourceHandle" value="C:\Users\Muharlyamov\Desktop\Study\Project\lib\src\delay.c"/>
-<attrib name="org.eclipse.debug.core.enabled" value="false"/>
 <attrib name="org.eclipse.cdt.debug.core.ignoreCount" value="0"/>
+<attrib name="org.eclipse.debug.core.enabled" value="false"/>
 </marker>
 </breakpoint>
 <breakpoint enabled="false" persistant="true" registered="true">
@@ -97,8 +97,8 @@
 <attrib name="registered" value="true"/>
 <attrib name="path" value="/Project/lib/src/delay.c"/>
 <attrib name="org.eclipse.cdt.debug.core.sourceHandle" value="C:\Users\Muharlyamov\Desktop\Study\Project\lib\src\delay.c"/>
-<attrib name="org.eclipse.debug.core.enabled" value="false"/>
 <attrib name="org.eclipse.cdt.debug.core.ignoreCount" value="0"/>
+<attrib name="org.eclipse.debug.core.enabled" value="false"/>
 </marker>
 </breakpoint>
 <breakpoint enabled="false" persistant="true" registered="true">
@@ -117,8 +117,8 @@
 <attrib name="registered" value="true"/>
 <attrib name="path" value="/Project/lib/src/game.c"/>
 <attrib name="org.eclipse.cdt.debug.core.sourceHandle" value="C:\Users\Muharlyamov\Desktop\Study\Project-2\lib\src\game.c"/>
-<attrib name="org.eclipse.cdt.debug.core.ignoreCount" value="0"/>
 <attrib name="org.eclipse.debug.core.enabled" value="false"/>
+<attrib name="org.eclipse.cdt.debug.core.ignoreCount" value="0"/>
 </marker>
 </breakpoint>
 </breakpoints>
