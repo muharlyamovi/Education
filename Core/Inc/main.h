@@ -76,16 +76,6 @@ extern volatile uint32_t counter;
 /* Private defines -----------------------------------------------------------*/
 /* USER CODE BEGIN Private defines */
 
-
-#define SPI_SendData                 LL_I2S_TransmitData16
-#define SPI_ReceiveData              SPI_I2S_ReceiveData
-
-
-#define GPIO_SetBits									LL_GPIO_SetOutputPin
-#define GPIO_ResetBits									LL_GPIO_ResetOutputPin
-#define SPI_I2S_GetFlagStatus(SPI1, SPI_I2S_FLAG_TXE) 	LL_SPI_IsActiveFlag_TXE(SPI1)
-#define Delay 											HAL_Delay
-
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

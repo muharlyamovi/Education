@@ -92,8 +92,7 @@ int main(void)
   uint32_t osc = HAL_RCC_GetSysClockFreq();
   ssd1306_Init();
   ssd1306_Fill(Black);
-  draw_vin();
-  ssd1306_UpdateScreen();
+  draw_car(10,10);
   /* USER CODE END 2 */
 
   /* Infinite loop */
