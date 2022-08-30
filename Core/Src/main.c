@@ -98,9 +98,8 @@ int main(void)
   /* USER CODE BEGIN 2 */
   uint32_t osc = HAL_RCC_GetSysClockFreq();
   ssd1306_Init();
-  	 //HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1);
-	 //TIM1->CCR4 = 30;
-	 //HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_4);
+  TIM4->CCR4 = 30;
+  HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_4);
   //ssd1306_Fill(Black);
   //draw_car(10,10);
   /* USER CODE END 2 */
