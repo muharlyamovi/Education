@@ -19,7 +19,10 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "dma.h"
+#include "rng.h"
 #include "spi.h"
+#include "tim.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
@@ -46,6 +49,7 @@
 /* USER CODE BEGIN PV */
 
 int ret = 0;
+//uint8_t pwm_value = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -87,24 +91,30 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_SPI1_Init();
+  MX_RNG_Init();
+  MX_TIM4_Init();
   /* USER CODE BEGIN 2 */
   uint32_t osc = HAL_RCC_GetSysClockFreq();
   ssd1306_Init();
-  ssd1306_Fill(Black);
-  draw_car(10,10);
+  	 //HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1);
+	 //TIM1->CCR4 = 30;
+	 //HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_4);
+  //ssd1306_Fill(Black);
+  //draw_car(10,10);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	 updateGame();
     /* USER CODE END WHILE */
-	  //ssd1306_TestAll();
-
-
 
     /* USER CODE BEGIN 3 */
+	//user_pwm_setvalue(1000);
+
   }
   /* USER CODE END 3 */
 }
@@ -153,7 +163,17 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
+void user_pwm_setvalue(uint16_t value)
+{
+    TIM_OC_InitTypeDef sConfigOC;
 
+    sConfigOC.OCMode = TIM_OCMODE_PWM1;
+    sConfigOC.Pulse = value;
+    sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
+    sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
+    HAL_TIM_PWM_ConfigChannel(&htim4, &sConfigOC, TIM_CHANNEL_4);
+    HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_4);
+}
 /* USER CODE END 4 */
 
 /**

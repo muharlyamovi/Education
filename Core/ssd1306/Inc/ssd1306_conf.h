@@ -31,16 +31,16 @@
 #define SSD1306_Reset_Port      GPIOA
 #define SSD1306_Reset_Pin       GPIO_PIN_4
 
-#define RESET_CS										LL_GPIO_ResetOutputPin(SSD1306_CS_Port, SSD1306_CS_Pin)
-#define SET_CS											LL_GPIO_SetOutputPin(SSD1306_CS_Port, SSD1306_CS_Pin)
-#define RESET_DC										LL_GPIO_ResetOutputPin(SSD1306_DC_Port, SSD1306_DC_Pin)
-#define SET_DC											LL_GPIO_SetOutputPin(SSD1306_DC_Port, SSD1306_DC_Pin)
-#define	RESET_PORT										LL_GPIO_ResetOutputPin(SSD1306_Reset_Port, SSD1306_Reset_Pin)
-#define SET_PORT										LL_GPIO_SetOutputPin(SSD1306_Reset_Port, SSD1306_Reset_Pin)
-#define CHECK_TXE_FLAG 									LL_SPI_IsActiveFlag_TXE(SPI1)
-#define SPI_SEND										LL_I2S_TransmitData16(SPI1,send_data)
+#define RESET_CS				LL_GPIO_ResetOutputPin(SSD1306_CS_Port, SSD1306_CS_Pin)
+#define SET_CS					LL_GPIO_SetOutputPin(SSD1306_CS_Port, SSD1306_CS_Pin)
+#define RESET_DC				LL_GPIO_ResetOutputPin(SSD1306_DC_Port, SSD1306_DC_Pin)
+#define SET_DC					LL_GPIO_SetOutputPin(SSD1306_DC_Port, SSD1306_DC_Pin)
+#define	RESET_PORT				LL_GPIO_ResetOutputPin(SSD1306_Reset_Port, SSD1306_Reset_Pin)
+#define SET_PORT				LL_GPIO_SetOutputPin(SSD1306_Reset_Port, SSD1306_Reset_Pin)
+#define CHECK_TXE_FLAG 			LL_SPI_IsActiveFlag_TXE(SPI1)
+#define SPI_SEND				LL_I2S_TransmitData16(SPI1,send_data)
 
-#define Delay 											HAL_Delay
+#define Delay 					HAL_Delay
 #endif
 
 #endif /* __SSD1306_CONF_H__ */

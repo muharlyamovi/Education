@@ -4,10 +4,9 @@
 #include "ssd1306_tests.h"
 
 //--------------------------------------------------------------------------------------------------------
-uint32_t millis() {
+extern uint32_t millis() {
 	return counter;
 }
-
 
 void ssd1306_TestBorder() {
     ssd1306_Fill(Black);

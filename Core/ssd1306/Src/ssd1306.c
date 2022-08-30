@@ -13,7 +13,7 @@ void ssd1306_WriteCommand(uint8_t byte) {
 	RESET_CS;
 	RESET_DC;
 	while (CHECK_TXE_FLAG == RESET) {}		//(SPI_I2S_GetFlagStatus(SPI1, SPI_I2S_FLAG_TXE) == RESET) {}
-	uint16_t send_data = (uint8_t)byte;
+	uint8_t send_data = (uint8_t)byte;
 	SPI_SEND;
     SET_CS; 									// un-select OLED
 }
@@ -25,7 +25,7 @@ void ssd1306_WriteData(uint8_t *buffer, size_t buff_size) {
 	  uint8_t pTxBufferPtr = (uint8_t *)&buffer;
 	  for(int i = 0; i < SSD1306_WIDTH; i++){
 		while (CHECK_TXE_FLAG == RESET) {}
-		uint16_t send_data = &pTxBufferPtr;
+		uint8_t send_data = &pTxBufferPtr;
 		SPI_SEND;
 	    pTxBufferPtr += sizeof(uint8_t);
 	  }
@@ -171,7 +171,7 @@ void ssd1306_UpdateScreen(void) {
 
     	  for(int j = 0; j < SSD1306_WIDTH; j++){
     		while (CHECK_TXE_FLAG == RESET) {}
-    		uint16_t send_data = SSD1306_Buffer[(SSD1306_WIDTH*i) + j];
+    		uint8_t send_data = SSD1306_Buffer[(SSD1306_WIDTH*i) + j];
     	    SPI_SEND;
     	  }
 
