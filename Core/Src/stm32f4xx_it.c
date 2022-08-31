@@ -195,6 +195,9 @@ void SysTick_Handler(void)
 	if ((counter % 16) == 0) {
 		//ssd1306_UpdateScreen();
 	}
+	if ((counter % tone_delay) == 0) {
+		play_melody();
+	}
   /* USER CODE END SysTick_IRQn 0 */
   HAL_IncTick();
   /* USER CODE BEGIN SysTick_IRQn 1 */

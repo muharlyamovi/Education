@@ -25,6 +25,10 @@
 #include "tim.h"
 #include "gpio.h"
 
+#include "buzzerDriver.h"
+#include "melody.h"
+
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "ssd1306.h"
@@ -37,6 +41,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -47,9 +52,8 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
-int ret = 0;
-//uint8_t pwm_value = 0;
+uint32_t tone_iter = 0;
+volatile uint32_t tone_delay = 20;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -98,22 +102,32 @@ int main(void)
   /* USER CODE BEGIN 2 */
   uint32_t osc = HAL_RCC_GetSysClockFreq();
   ssd1306_Init();
-  TIM4->CCR4 = 30;
+
   HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_4);
+
+  //uint8_t offset_tone = 3;
+  //uint16_t tone_8[] = {18222, 17199, 16233, 15325, 14463, 13651, 12884, 12161, 11479, 10834, 10226, 9653, 9111};
+
   //ssd1306_Fill(Black);
   //draw_car(10,10);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	 updateGame();
+	updateGame();
     /* USER CODE END WHILE */
+	/*    for (uint16_t i = 0; i <= 12; i=i+1){
+
+	    	__HAL_TIM_SET_AUTORELOAD(&htim4,tone_8[i] * offset_tone);
+	    	TIM4->CCR4 = (TIM4->ARR) / 2;
+	    HAL_Delay(500);
+	    }
+*/
 
     /* USER CODE BEGIN 3 */
-	//user_pwm_setvalue(1000);
-
   }
   /* USER CODE END 3 */
 }
@@ -162,17 +176,37 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
-void user_pwm_setvalue(uint16_t value)
+void buzzerSetNewFrequency(uint32_t newFreq)
 {
-    TIM_OC_InitTypeDef sConfigOC;
+	uint64_t tempFreq = newFreq;
+	if(newFreq == 0) tempFreq = 1;
 
-    sConfigOC.OCMode = TIM_OCMODE_PWM1;
-    sConfigOC.Pulse = value;
-    sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
-    sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
-    HAL_TIM_PWM_ConfigChannel(&htim4, &sConfigOC, TIM_CHANNEL_4);
-    HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_4);
+	uint64_t tempNewValue = (uint64_t) CPU_FREQ / PRESCALER / tempFreq;
+
+	// setting new value
+	TIM4 ->ARR = (uint32_t)tempNewValue;
+	TIM4 -> CCR4 = (uint32_t)tempNewValue/2;
+
 }
+
+
+void play_melody() {
+
+  tone_iter++;
+
+  if (tone_iter <= 77) {
+	  buzzerSetNewFrequency(marioMelody[tone_iter]);
+	  tone_delay = marioDuration[tone_iter] * melodySlowfactor[0];
+  }
+  else {
+	  tone_delay = 3000;
+	  tone_iter = 0;
+  }
+
+}
+
+
+
 /* USER CODE END 4 */
 
 /**

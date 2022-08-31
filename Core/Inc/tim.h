@@ -34,7 +34,9 @@ extern "C" {
 extern TIM_HandleTypeDef htim4;
 
 /* USER CODE BEGIN Private defines */
-
+#define CPU_FREQ	72000000
+#define PRESCALER 	72
+#define PERIOD		60000
 /* USER CODE END Private defines */
 
 void MX_TIM4_Init(void);
