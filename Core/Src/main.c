@@ -117,7 +117,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	updateGame();
+	//updateGame();
     /* USER CODE END WHILE */
 	/*    for (uint16_t i = 0; i <= 12; i=i+1){
 
@@ -189,7 +189,6 @@ void buzzerSetNewFrequency(uint32_t newFreq)
 
 }
 
-
 void play_melody() {
 
   tone_iter++;
@@ -202,11 +201,7 @@ void play_melody() {
 	  tone_delay = 3000;
 	  tone_iter = 0;
   }
-
 }
-
-
-
 /* USER CODE END 4 */
 
 /**
