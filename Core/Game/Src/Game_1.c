@@ -1,5 +1,6 @@
 #include "main.h"
 #include "Game_1.h"
+#include "rng.h"
 
  //= 0;
 uint8_t dirPressed = 0;
@@ -41,10 +42,13 @@ uint8_t  metreCnt  = 0;
 
 uint8_t rnd_positions[10] =  {0, 6, 12, 18, 24, 30, 36, 42, 48, 54};
 uint16_t res;
+
 uint8_t element[3] = {0};
 
 uint16_t enemy_start_time;
 uint8_t logo = 0;
+
+uint16_t num = 0;
 
 //------------------------------- MOVE CAR ----------------------------------------
 void moveCar()
@@ -83,7 +87,7 @@ void updateGame()
 		splashScreen(); //draw_vin
 		logo = 1;
 	}
-	//adc_rand();
+	rand_pos();
 	moveCar();
     drawRoad();
     draw_car(carPosX, carPosYCnt);
@@ -157,13 +161,13 @@ void drawRoad()
 //-----------------------------------------DRAW enemys ---------------------------------------------------
 void enemysDraw()
 {
-	if(enemy0PosX>220&&enemy0PosX<230) {
+	if(enemy0PosX > 220 && enemy0PosX < 230) {
 		element[0] = res;
 	}
-	if(enemy1PosX>220&&enemy1PosX<230) {
+	if(enemy1PosX > 220 && enemy1PosX < 230) {
 		element[1] = res;
 	}
-	if(enemy2PosX>220&&enemy2PosX<230) {
+	if(enemy2PosX > 220 && enemy2PosX < 230) {
 		element[2] = res;
 	}
 
@@ -260,16 +264,11 @@ void waitForPress()
 		    logo = 0;
 			//BTN();
 		}
-
 	}
 }
 //--------------------------------------------------------------------------------------------------------
-void adc_rand()
+void rand_pos()
 {
-	//ADC2->CR2 |= ADC_CR2_SWSTART; 		//start ADC
-    //while ((ADC2->SR & ADC_SR_EOC)==0);	//End of conversion
-   // ADC2->SR = 0; 						//ADC status register
-	//hrng = res;
-   // res = (ADC2->DR); 					//ADC regular data register
-    //res = hrng % 10;
+	num = HAL_RNG_GetRandomNumber(&hrng);
+	res = num % 10;
 }

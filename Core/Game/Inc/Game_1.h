@@ -19,6 +19,7 @@ void gameOver();
 void restartGame();
 void splashScreen();
 void waitForPress();
+void rand_pos();
 
 uint8_t randomPosX();
 uint8_t randomPosY();

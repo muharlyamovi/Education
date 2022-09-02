@@ -117,7 +117,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	//updateGame();
+	updateGame();
     /* USER CODE END WHILE */
 	/*    for (uint16_t i = 0; i <= 12; i=i+1){
 
@@ -125,7 +125,14 @@ int main(void)
 	    	TIM4->CCR4 = (TIM4->ARR) / 2;
 	    HAL_Delay(500);
 	    }
-*/
+	  num = HAL_RNG_GetRandomNumber(&hrng);
+	  char str[20];
+	  itoa(num,str,10);
+	  HAL_Delay(2000);
+	  ssd1306_SetCursor(15, 35);
+	  ssd1306_WriteString(str, Font_6x8, White);
+	  ssd1306_UpdateScreen();
+	  */
 
     /* USER CODE BEGIN 3 */
   }
