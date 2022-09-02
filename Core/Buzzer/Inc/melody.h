@@ -209,10 +209,10 @@ const uint32_t secondDuration[] = {
   4,20,
 };
 
-const uint32_t* melody[] ={marioMelody, secondMelody};
-const uint32_t* noteDurations[] = {marioDuration, secondDuration};
+//const uint32_t* melody[] ={marioMelody, secondMelody};
+//const uint32_t* noteDurations[] = {marioDuration, secondDuration};
 const uint16_t melodySlowfactor[] ={10, 30};
 
 const uint32_t melodySizes[] ={sizeof(marioMelody)/sizeof(uint32_t),
-						sizeof(secondDuration)/sizeof(uint32_t)};
+								sizeof(secondDuration)/sizeof(uint32_t)};
 #endif /* MELODY_H_ */

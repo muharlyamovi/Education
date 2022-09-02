@@ -234,7 +234,9 @@ void DMA1_Stream6_IRQHandler(void)
 void EXTI9_5_IRQHandler(void)
 {
   /* USER CODE BEGIN EXTI9_5_IRQn 0 */
-
+	if ((HAL_GPIO_ReadPin (GPIOC, GPIO_PIN_7)) == 0)	dirPressed = 5; //DIRUP_2;
+	if ((HAL_GPIO_ReadPin (GPIOC, GPIO_PIN_8)) == 0)	dirPressed = 6; //DIRDOWN_2;
+	if ((HAL_GPIO_ReadPin (GPIOC, GPIO_PIN_9)) == 0)	dirPressed = 7; //DIRRIGHT_2;
   /* USER CODE END EXTI9_5_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_7);
   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_8);
@@ -250,8 +252,10 @@ void EXTI9_5_IRQHandler(void)
 void EXTI15_10_IRQHandler(void)
 {
   /* USER CODE BEGIN EXTI15_10_IRQn 0 */
-	if ((HAL_GPIO_ReadPin (GPIOC, GPIO_PIN_11)) == 0)	dirPressed = 1; //DIRUP;
-	if ((HAL_GPIO_ReadPin (GPIOA, GPIO_PIN_15)) == 0)	dirPressed = 2; //DIRDOWN;
+	if ((HAL_GPIO_ReadPin (GPIOC, GPIO_PIN_11)) == 0)	dirPressed = 1; //DIRUP_1;
+	if ((HAL_GPIO_ReadPin (GPIOA, GPIO_PIN_15)) == 0)	dirPressed = 2; //DIRDOWN_1;
+	if ((HAL_GPIO_ReadPin (GPIOC, GPIO_PIN_12)) == 0)	dirPressed = 3; //DIRRIGHT_1;
+	if ((HAL_GPIO_ReadPin (GPIOC, GPIO_PIN_10)) == 0)	dirPressed = 4; //DIRLEFT_1;
   /* USER CODE END EXTI15_10_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_10);
   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_11);

@@ -113,7 +113,7 @@ int main(void)
   while (1)
   {
 	//updateGame();
-	  play_melody();
+	  //play_melody();
     /* USER CODE END WHILE */
 	/*    for (uint16_t i = 0; i <= 12; i=i+1){
 

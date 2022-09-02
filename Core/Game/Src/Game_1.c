@@ -62,11 +62,11 @@ void moveCar()
 
 	switch (dirPressed)
 	{
-	case DIRUP :
+	case DIRUP_1 :
 		if ((HAL_GPIO_ReadPin (GPIOC, GPIO_PIN_11)) == 0) carPosYCnt -= 4;
 		else dirPressed=0;
     break;
-    case  DIRDOWN :
+    case  DIRDOWN_1 :
     	if ((HAL_GPIO_ReadPin (GPIOA, GPIO_PIN_15)) == 0) carPosYCnt += 4;
 		else dirPressed=0;
     break;
