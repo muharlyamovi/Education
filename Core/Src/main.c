@@ -25,10 +25,6 @@
 #include "tim.h"
 #include "gpio.h"
 
-#include "buzzerDriver.h"
-#include "melody.h"
-
-
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "ssd1306.h"
@@ -52,8 +48,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-uint32_t tone_iter = 0;
-volatile uint32_t tone_delay = 20;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -100,9 +95,9 @@ int main(void)
   MX_RNG_Init();
   MX_TIM4_Init();
   /* USER CODE BEGIN 2 */
+
   uint32_t osc = HAL_RCC_GetSysClockFreq();
   ssd1306_Init();
-
   HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_4);
 
   //uint8_t offset_tone = 3;
@@ -117,7 +112,8 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	updateGame();
+	//updateGame();
+	  play_melody();
     /* USER CODE END WHILE */
 	/*    for (uint16_t i = 0; i <= 12; i=i+1){
 
@@ -183,32 +179,7 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
-void buzzerSetNewFrequency(uint32_t newFreq)
-{
-	uint64_t tempFreq = newFreq;
-	if(newFreq == 0) tempFreq = 1;
 
-	uint64_t tempNewValue = (uint64_t) CPU_FREQ / PRESCALER / tempFreq;
-
-	// setting new value
-	TIM4 ->ARR = (uint32_t)tempNewValue;
-	TIM4 -> CCR4 = (uint32_t)tempNewValue/2;
-
-}
-
-void play_melody() {
-
-  tone_iter++;
-
-  if (tone_iter <= 77) {
-	  buzzerSetNewFrequency(marioMelody[tone_iter]);
-	  tone_delay = marioDuration[tone_iter] * melodySlowfactor[0];
-  }
-  else {
-	  tone_delay = 3000;
-	  tone_iter = 0;
-  }
-}
 /* USER CODE END 4 */
 
 /**

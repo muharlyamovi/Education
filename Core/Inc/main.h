@@ -48,7 +48,6 @@ extern "C" {
 #include "ssd1306.h"
 #include "ssd1306_conf.h"
 #include "ssd1306_tests.h"
-
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -71,7 +70,6 @@ void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
 extern volatile uint32_t counter;
-volatile extern uint32_t tone_delay;
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/

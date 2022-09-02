@@ -9,7 +9,7 @@
 #define BUZZERDRIVER_H_
 
 void buzzerDriverInit(void);
-void buzzerSetNewFrequency(uint32_t);
+void buzzerSetNewFrequency();
 
 
 

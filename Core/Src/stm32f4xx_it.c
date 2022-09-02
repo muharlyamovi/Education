@@ -43,6 +43,7 @@
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
 volatile uint32_t counter = 0;
+volatile extern uint32_t tone_delay;
 
 extern volatile uint8_t dirPressed;
 extern volatile uint8_t BUTUP;

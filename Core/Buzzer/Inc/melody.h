@@ -4,6 +4,7 @@
  *  Created on: Feb 22, 2019
  *      Author: lukasz
  */
+#include "main.h"
 
 #ifndef MELODY_H_
 #define MELODY_H_
@@ -97,6 +98,8 @@
 #define NOTE_CS8 4435
 #define NOTE_D8  4699
 #define NOTE_DS8 4978
+
+//volatile extern uint32_t tone_delay;
 
 const uint32_t marioMelody[] = {
 		  NOTE_E7, NOTE_E7, 0, NOTE_E7,
