@@ -99,7 +99,7 @@ int main(void)
   uint32_t osc = HAL_RCC_GetSysClockFreq();
   ssd1306_Init();
   HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_4);
-
+  uint8_t flag_menu = 0;
   //uint8_t offset_tone = 3;
   //uint16_t tone_8[] = {18222, 17199, 16233, 15325, 14463, 13651, 12884, 12161, 11479, 10834, 10226, 9653, 9111};
 
@@ -129,7 +129,8 @@ int main(void)
 	  ssd1306_WriteString(str, Font_6x8, White);
 	  ssd1306_UpdateScreen();
 	  */
-
+	  if (flag_menu == 0) MENU_GENERAL();
+	  		else MENU_SECOND();
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
