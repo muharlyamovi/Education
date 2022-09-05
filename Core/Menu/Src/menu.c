@@ -7,8 +7,8 @@ uint8_t cursorY = 0;
 uint8_t flag_in = 0;
 uint8_t flag_up = 0;
 uint8_t flag_down = 0;
+uint8_t flag_menu = 0;
 
-uint8_t flag_menu;
 //---------------------------------------------------------------------------
 void MENU_GENERAL()
 {

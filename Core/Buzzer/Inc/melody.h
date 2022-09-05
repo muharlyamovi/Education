@@ -9,6 +9,12 @@
 #ifndef MELODY_H_
 #define MELODY_H_
 
+void buzzerSetNewFrequency(uint32_t newFreq);
+void play_melody();
+
+uint32_t tone_iter;
+volatile uint32_t tone_delay;
+
 #define NOTE_B0  31
 #define NOTE_C1  33
 #define NOTE_CS1 35
@@ -98,8 +104,6 @@
 #define NOTE_CS8 4435
 #define NOTE_D8  4699
 #define NOTE_DS8 4978
-
-//volatile extern uint32_t tone_delay;
 
 const uint32_t marioMelody[] = {
 		  NOTE_E7, NOTE_E7, 0, NOTE_E7,
@@ -209,10 +213,8 @@ const uint32_t secondDuration[] = {
   4,20,
 };
 
-//const uint32_t* melody[] ={marioMelody, secondMelody};
-//const uint32_t* noteDurations[] = {marioDuration, secondDuration};
 const uint16_t melodySlowfactor[] ={10, 30};
-
 const uint32_t melodySizes[] ={sizeof(marioMelody)/sizeof(uint32_t),
-								sizeof(secondDuration)/sizeof(uint32_t)};
+							sizeof(secondDuration)/sizeof(uint32_t)};
+
 #endif /* MELODY_H_ */

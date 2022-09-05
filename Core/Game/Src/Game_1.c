@@ -2,31 +2,26 @@
 #include "Game_1.h"
 #include "rng.h"
 
- //= 0;
 uint8_t dirPressed = 0;
-uint8_t BUTUP = 0;
-uint8_t BUTDWN = 0;
-uint8_t BUTLFT = 0;
-uint8_t BUTRHT = 0;
+//uint8_t BUTUP = 0;
+//uint8_t BUTDWN = 0;
+//uint8_t BUTLFT = 0;
+//uint8_t BUTRHT = 0;
 
 uint8_t carPosX = 0;
-//uint8_t carPosY[] = {0,16,32,48};  // needs value cahnging the the array
 uint8_t carPosY = 0;
-uint8_t lanePosArr[]={0,16,32,48};   // array to store where each lane is
+uint8_t lanePosArr[4]={0,16,32,48};
 uint8_t carPosYCnt = 0;
 uint8_t carYTmp = 0;
 
-// variables for the lines in the road
-uint8_t roadLineX1 = 51;             // these are predefined at the begining then the lines appear seamless
+uint8_t roadLineX1 = 51;
 uint8_t roadLineX2 = 102;
 uint8_t roadLineX3 = 153;
 uint8_t roadLineX4 = 254;
 uint8_t roadLineX5 = 200;
 
-// this is how many pixels the play area moves at a time
 uint8_t drawSpeed = 4;
 
-// vars for enemy0
 uint8_t enemy0PosX = 132;
 uint8_t enemy0PosY = 0;
 uint8_t enemy1PosX = 180;
@@ -34,9 +29,8 @@ uint8_t enemy1PosY = 0;
 uint8_t enemy2PosX = 230;
 uint8_t enemy2PosY = 0;
 
-// score counter
-uint32_t score     = 0;    			 // this is the score :/ lol
-uint32_t compare   = 0;   			 // this stores the  score at the last level up to compare back to
+uint32_t score     = 0;
+uint32_t compare   = 0;
 uint32_t highScore = 5;
 uint8_t  metreCnt  = 0;
 
@@ -49,7 +43,6 @@ uint16_t enemy_start_time;
 uint8_t logo = 0;
 
 uint16_t num = 0;
-
 //------------------------------- MOVE CAR ----------------------------------------
 void moveCar()
    {
@@ -72,15 +65,7 @@ void moveCar()
     break;
     }
 }
-/*
-//------------------------------------ UPDATE DISPLAY-----------------------------------------------------
-void updateDisplay()
-{
-	ssd1306_UpdateScreen();
-	ssd1306_Fill(Black);
-}
 //-------------------------------------------UPDATE GAME--------------------------------------------------
- * */
 void updateGame()
 {
 	if (logo == 0) {
@@ -257,6 +242,7 @@ void waitForPress()
 		if ( (HAL_GPIO_ReadPin (GPIOC, GPIO_PIN_9)) == 0 ) {
 			waiting = 1;
 			dirPressed=0;
+			flag_menu = 0;
 		}
 		if ( (HAL_GPIO_ReadPin (GPIOC, GPIO_PIN_10)) == 0 ) {
 			waiting = 1;

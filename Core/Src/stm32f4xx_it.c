@@ -46,10 +46,10 @@ volatile uint32_t counter = 0;
 volatile extern uint32_t tone_delay;
 
 extern volatile uint8_t dirPressed;
-extern volatile uint8_t BUTUP;
-extern volatile uint8_t BUTDWN;
-extern volatile uint8_t BUTLFT;
-extern volatile uint8_t BUTRHT;
+//extern volatile uint8_t BUTUP;
+//extern volatile uint8_t BUTDWN;
+//extern volatile uint8_t BUTLFT;
+//extern volatile uint8_t BUTRHT;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -234,7 +234,7 @@ void DMA1_Stream6_IRQHandler(void)
 void EXTI9_5_IRQHandler(void)
 {
   /* USER CODE BEGIN EXTI9_5_IRQn 0 */
-	if ((HAL_GPIO_ReadPin (GPIOC, GPIO_PIN_7)) == 0)	dirPressed = 5; //DIRUP_2;
+	if ((HAL_GPIO_ReadPin (GPIOC, GPIO_PIN_7)) == 0) buttons.btn_a = PRESSED;	dirPressed = 5; //DIRUP_2;
 	if ((HAL_GPIO_ReadPin (GPIOC, GPIO_PIN_8)) == 0)	dirPressed = 6; //DIRDOWN_2;
 	if ((HAL_GPIO_ReadPin (GPIOC, GPIO_PIN_9)) == 0)	dirPressed = 7; //DIRRIGHT_2;
   /* USER CODE END EXTI9_5_IRQn 0 */

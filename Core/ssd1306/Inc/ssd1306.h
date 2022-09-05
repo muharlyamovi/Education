@@ -5,8 +5,8 @@
 #include <math.h>
 #include <stdlib.h>
 #include <string.h>
-#include "main.h"
 
+#include "main.h"
 #include "ssd1306_conf.h"
 #include "ssd1306_fonts.h"
 #include "ssd1306_image.h"
@@ -50,6 +50,7 @@ void ssd1306_DrawArc(uint8_t x, uint8_t y, uint8_t radius, uint16_t start_angle,
 void ssd1306_DrawCircle(uint8_t par_x, uint8_t par_y, uint8_t par_r, SSD1306_COLOR color);
 void ssd1306_Polyline(const SSD1306_VERTEX *par_vertex, uint16_t par_size, SSD1306_COLOR color);
 void ssd1306_DrawRectangle(uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2, SSD1306_COLOR color);
+void LCD_DrawBitmap(int16_t x, int16_t y, const unsigned char* bitmap, int16_t w, int16_t h, uint16_t color);
 /**
  * @brief Sets the contrast of the display.
  * @param[in] value contrast to set.
@@ -74,5 +75,11 @@ void ssd1306_Reset(void);
 void ssd1306_WriteCommand(uint8_t byte);
 void ssd1306_WriteData(uint8_t* buffer, size_t buff_size);
 SSD1306_Error_t ssd1306_FillBuffer(uint8_t* buf, uint32_t len);
+
+void draw_crash(int16_t x,int16_t y);
+void draw_car(int16_t x,int16_t y);
+void draw_vin(int16_t x,int16_t y);
+void draw_logo(int16_t x,int16_t y);
+void draw_road(int16_t x,int16_t y);
 
 #endif // __SSD1306_H__

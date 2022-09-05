@@ -1,6 +1,5 @@
 #include "ssd1306.h"
 
-
 void ssd1306_Reset(void) {
 	SET_CS;     								// CS = High (not selected)
 	RESET_PORT;    							    // Reset the OLED
@@ -32,7 +31,7 @@ void ssd1306_WriteData(uint8_t *buffer, size_t buff_size) {
 	SET_CS;
 }
 //--------------------------------------------------------------------------------------------------------
-void spi_send_bytes(uint8_t* buffer) {}
+//void spi_send_bytes(uint8_t* buffer) {}
 //---------------------------Screen buffer----------------------------------------------------------------
 static uint8_t SSD1306_Buffer[SSD1306_BUFFER_SIZE];
 //---------------------------Screen object----------------------------------------------------------------
@@ -123,21 +122,18 @@ void ssd1306_Init(void) {
 #error "Only 32, 64, or 128 lines of height are supported!"
 #endif
 
-    ssd1306_WriteCommand(0xDB); //--set vcomh
-    ssd1306_WriteCommand(0x20); //0x20,0.77xVcc
+    ssd1306_WriteCommand(0xDB); // Set vcomh
+    ssd1306_WriteCommand(0x20); // 0x20,0.77xVcc
 
-    ssd1306_WriteCommand(0x8D); //--set DC-DC enable
+    ssd1306_WriteCommand(0x8D); // Set DC-DC enable
     ssd1306_WriteCommand(0x14); //
-    ssd1306_SetDisplayOn(1); 	//--turn on SSD1306 panel
+    ssd1306_SetDisplayOn(1); 	// Turn on SSD1306 panel
 
-    // Clear screen
-    ssd1306_Fill(Black);
-    
-    // Flush buffer to screen
-    ssd1306_UpdateScreen();
-    
-    // Set default values for screen object
-    SSD1306.CurrentX = 0;
+    ssd1306_Fill(Black);		// Clear screen
+
+    ssd1306_UpdateScreen();		// Flush buffer to screen
+
+    SSD1306.CurrentX = 0;		// Set default values for screen object
     SSD1306.CurrentY = 0;
     
     SSD1306.Initialized = 1;
@@ -159,24 +155,20 @@ void ssd1306_UpdateScreen(void) {
     //  * 64px   ==  8 pages
     //  * 128px  ==  16 pages
     for(uint8_t i = 0; i < SSD1306_HEIGHT/8; i++) {
-        ssd1306_WriteCommand(0xB0 + i); // Set the current RAM page address.
+        ssd1306_WriteCommand(0xB0 + i);	// Set the current RAM page address.
         ssd1306_WriteCommand(0x00);
         ssd1306_WriteCommand(0x10);
         //ssd1306_WriteData(&SSD1306_Buffer[SSD1306_WIDTH*i],SSD1306_WIDTH);
 
-    	//GPIO_ResetBits(SSD1306_CS_Port, SSD1306_CS_Pin); // select OLED
-    	//GPIO_SetBits(SSD1306_DC_Port, SSD1306_DC_Pin); // data
-        RESET_CS;
-        SET_DC;
+        RESET_CS;						// Select OLED
+        SET_DC; 						// Data
 
     	  for(int j = 0; j < SSD1306_WIDTH; j++){
     		while (CHECK_TXE_FLAG == RESET) {}
     		uint8_t send_data = SSD1306_Buffer[(SSD1306_WIDTH*i) + j];
     	    SPI_SEND;
     	  }
-
-    	  SET_CS;
-    	  //GPIO_SetBits(SSD1306_CS_Port, SSD1306_CS_Pin); // un-select OLED
+    	  SET_CS;						// Un-select OLED
     }
 }
 //--------------------------------------------------------------------------------------------------------
@@ -208,16 +200,13 @@ void ssd1306_DrawPixel(uint8_t x, uint8_t y, SSD1306_COLOR color) {
 char ssd1306_WriteChar(char ch, FontDef Font, SSD1306_COLOR color) {
     uint32_t i, b, j;
     
-    // Check if character is valid
-    if (ch < 32 || ch > 126)
+    if (ch < 32 || ch > 126)				// Check if character is valid
         return 0;
     
-    // Check remaining space on current line
+    										// Check remaining space on current line
     if (SSD1306_WIDTH < (SSD1306.CurrentX + Font.FontWidth) ||
-        SSD1306_HEIGHT < (SSD1306.CurrentY + Font.FontHeight))
-    {
-        // Not enough space on current line
-        return 0;
+        SSD1306_HEIGHT < (SSD1306.CurrentY + Font.FontHeight)) {
+        return 0;      						// Not enough space on current line
     }
     
     // Use the font to write
@@ -231,27 +220,19 @@ char ssd1306_WriteChar(char ch, FontDef Font, SSD1306_COLOR color) {
             }
         }
     }
-    // The current space is now taken
-    SSD1306.CurrentX += Font.FontWidth;
-    
-    // Return written char for validation
-    return ch;
+    SSD1306.CurrentX += Font.FontWidth;		// The current space is now taken
+    return ch;   						 	// Return written char for validation
 }
 //------------------------------Write full string to screenbuffer-----------------------------------------
 char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color) {
     // Write until null-byte
     while (*str) {
         if (ssd1306_WriteChar(*str, Font, color) != *str) {
-            // Char could not be written
-            return *str;
+            return *str;             		// Char could not be written
         }
-        
-        // Next char
-        str++;
+        str++;         						// Next char
     }
-    
-    // Everything ok
-    return *str;
+    return *str;							// Everything ok
 }
 //---------------------------------Position the cursor----------------------------------------------------
 void ssd1306_SetCursor(uint8_t x, uint8_t y) {
@@ -277,20 +258,14 @@ void ssd1306_Line(uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2, SSD1306_COLOR 
       error -= deltaY;
       x1 += signX;
     }
-    else
-    {
-    /*nothing to do*/
-    }
+    else {} 								// Nothing to do
         
     if(error2 < deltaX)
     {
       error += deltaX;
       y1 += signY;
     }
-    else
-    {
-    /*nothing to do*/
-    }
+    else {}									// Nothing to do
   }
   return;
 }
@@ -302,10 +277,7 @@ void ssd1306_Polyline(const SSD1306_VERTEX *par_vertex, uint16_t par_size, SSD13
       ssd1306_Line(par_vertex[i - 1].x, par_vertex[i - 1].y, par_vertex[i].x, par_vertex[i].y, color);
     }
   }
-  else
-  {
-    /*nothing to do*/
-  }
+  else {} 									// Nothing to do
   return;
 }
 //----------------------------------Convert Degrees to Radians--------------------------------------------
@@ -390,25 +362,15 @@ void ssd1306_DrawCircle(uint8_t par_x,uint8_t par_y,uint8_t par_r,SSD1306_COLOR 
             if(-x == y && e2 <= x) {
               e2 = 0;
             }
-            else
-            {
-              /*nothing to do*/
-            }
+            else {} 							// Nothing to do
         }
-        else
-        {
-          /*nothing to do*/
-        }
+        else {}  							    // Nothing to do
         if(e2 > x) {
           x++;
           err = err + (x * 2 + 1);
         }
-        else
-        {
-          /*nothing to do*/
-        }
+        else {} 								// Nothing to do
     } while(x <= 0);
-
     return;
 }
 //-----------------------Draw rectangle-------------------------------------------------------------------
