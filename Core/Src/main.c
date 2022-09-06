@@ -28,6 +28,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "ssd1306.h"
+#include "menu.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -48,7 +49,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+//#include "Game_1.h"
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -99,7 +100,6 @@ int main(void)
   uint32_t osc = HAL_RCC_GetSysClockFreq();
   ssd1306_Init();
   HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_4);
-  extern volatile uint8_t flag_menu;
 
   /* USER CODE END 2 */
 

@@ -1,13 +1,9 @@
-#include <string.h>
-#include <stdio.h>
-#include "ssd1306.h"
 #include "ssd1306_tests.h"
 
 //--------------------------------------------------------------------------------------------------------
 extern uint32_t millis() {
 	return counter;
 }
-
 void ssd1306_TestBorder() {
     ssd1306_Fill(Black);
 
@@ -175,8 +171,4 @@ void ssd1306_TestAll() {
     ssd1306_TestCircle();
     Delay(1000);
 }
-
-
-
-
 //--------------------------------------------------------------------------------------------------------

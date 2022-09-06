@@ -8,12 +8,15 @@
 #ifndef MENU_INC_MENU_H_
 #define MENU_INC_MENU_H_
 
+#include "main.h"
+#include "Game_1.h"
+
 uint8_t BTNPressed;
 uint8_t cursorY;
 uint8_t flag_in;
 uint8_t flag_up;
 uint8_t flag_down;
-uint8_t flag_menu;
+extern volatile uint8_t flag_menu;
 
 void MENU_GENERAL();
 void MENU_SECOND();

@@ -9,6 +9,7 @@
 #define GAME_INC_GAME_1_H_
 
 #include "main.h"
+#include "rng.h"
 
 #define DIRUP_1     1
 #define DIRDOWN_1   2
@@ -20,10 +21,11 @@
 #define DIRLEFT_2   7
 #define DIRRIGHT_2  8
 
+extern volatile uint8_t dirPressed;
+
 uint8_t randomPosX();
 uint8_t randomPosY();
 
-uint8_t dirPressed;
 uint8_t carPosX;
 uint8_t carPosY;
 uint8_t lanePosArr[4];	// Array to store where each lane is
@@ -59,7 +61,7 @@ uint16_t enemy_start_time;
 uint8_t logo;
 
 uint16_t num;
-//extern volatile uint8_t flag_menu;
+volatile uint8_t flag_menu;
 
 void moveCar();
 void updateGame();

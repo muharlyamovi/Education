@@ -1,13 +1,11 @@
-//#include "menu.h"
-#include "main.h"
-#include "Game_1.h"
+#include "menu.h"
 
 uint8_t BTNPressed = 0;
 uint8_t cursorY = 0;
 uint8_t flag_in = 0;
 uint8_t flag_up = 0;
 uint8_t flag_down = 0;
-uint8_t flag_menu = 0;
+volatile uint8_t flag_menu = 0;
 
 //---------------------------------------------------------------------------
 void MENU_GENERAL()

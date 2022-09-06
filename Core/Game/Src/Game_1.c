@@ -1,8 +1,6 @@
-#include "main.h"
 #include "Game_1.h"
-#include "rng.h"
 
-uint8_t dirPressed = 0;
+volatile uint8_t dirPressed = 0;
 //uint8_t BUTUP = 0;
 //uint8_t BUTDWN = 0;
 //uint8_t BUTLFT = 0;
