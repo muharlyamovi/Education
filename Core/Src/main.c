@@ -28,7 +28,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "ssd1306.h"
-#include "menu.h"
+#include "button.h"
+//#include "menu.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -96,8 +97,8 @@ int main(void)
   MX_RNG_Init();
   MX_TIM4_Init();
   /* USER CODE BEGIN 2 */
-
-  uint32_t osc = HAL_RCC_GetSysClockFreq();
+  uint8_t a=0;
+  //uint32_t osc = HAL_RCC_GetSysClockFreq();
   ssd1306_Init();
   HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_4);
 
@@ -107,26 +108,43 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+/*
+	  if (HAL_GPIO_ReadPin (GPIOB, GPIO_PIN_12) == 0 ) {
+		  int hui = 0;
+	  }
+	  */
 	//updateGame();
 	  //play_melody();
-    /* USER CODE END WHILE */
-	/*    for (uint16_t i = 0; i <= 12; i=i+1){
+	if (millis() % 1 == 0)  button_counter();
+	if (millis() % 10 == 0) button_update();
 
-	    	__HAL_TIM_SET_AUTORELOAD(&htim4,tone_8[i] * offset_tone);
-	    	TIM4->CCR4 = (TIM4->ARR) / 2;
-	    HAL_Delay(500);
-	    }
-	  num = HAL_RNG_GetRandomNumber(&hrng);
-	  char str[20];
-	  itoa(num,str,10);
-	  HAL_Delay(2000);
-	  ssd1306_SetCursor(15, 35);
-	  ssd1306_WriteString(str, Font_6x8, White);
-	  ssd1306_UpdateScreen();
-	  */
-	  if (flag_menu == 0) MENU_GENERAL();
-	  if (flag_menu == 1) MENU_SECOND();
+	if (button_struct.btn_B == PRESSED_LONG){
+		//ssd1306_Fill(Black);
+		ssd1306_DrawRectangle(10, 40 ,SSD1306_WIDTH-1 - 9,SSD1306_HEIGHT-1 - 40,White); //(x1,y1,x2,y1,color);
+		//for (uint8_t a=0; a<110; a=a+11){
+			if ((button_struct.counters_btn[1] % 150) == 0){
+				for (uint8_t i=0+a; i<10+a; i++) {
+					for (uint8_t j=0; j<14; j++) {
+						ssd1306_DrawPixel(12+i,25+j, White);
+					}
+				}
+				ssd1306_UpdateScreen();
+				if ( a<110) a=a+11;
+				if (a == 110) a =0;
+			}
+		//}
+		//ssd1306_UpdateScreen();
+	}
+	else {
+		ssd1306_Fill(Black);
+		ssd1306_UpdateScreen();
+		a =0;
+	}
+
+    /* USER CODE END WHILE */
+
     /* USER CODE BEGIN 3 */
+
   }
   /* USER CODE END 3 */
 }

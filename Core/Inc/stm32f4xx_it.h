@@ -61,7 +61,7 @@ void EXTI9_5_IRQHandler(void);
 void EXTI15_10_IRQHandler(void);
 void HASH_RNG_IRQHandler(void);
 /* USER CODE BEGIN EFP */
-
+uint32_t millis();
 /* USER CODE END EFP */
 
 #ifdef __cplusplus
