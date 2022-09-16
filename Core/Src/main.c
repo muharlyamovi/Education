@@ -29,7 +29,7 @@
 /* USER CODE BEGIN Includes */
 #include "ssd1306.h"
 #include "button.h"
-	#include "MicroMenu.h"
+#include "MicroMenu.h"
 //#include "menu.h"
 /* USER CODE END Includes */
 
@@ -76,25 +76,6 @@ enum ButtonValues
 	BUTTON_ENTER,
 };
 
-enum ButtonValues GetButtonPress(void)
-{
-	return BUTTON_NONE;
-};
-/*** END DUMY CODE ***/
-
-
-/** Example menu item specific enter callback function, run when the associated menu item is entered. */
-static void Level1Item1_Enter(void)
-{
-	puts("ENTER");
-}
-
-/** Example menu item specific select callback function, run when the associated menu item is selected. */
-static void Level1Item1_Select(void)
-{
-	puts("SELECT");
-}
-
 /** Generic function to write the text of a menu.
  *
  *  \param[in] Text   Text of the selected menu to write, in \ref MENU_ITEM_STORAGE memory space
@@ -102,14 +83,14 @@ static void Level1Item1_Select(void)
 static void Generic_Write(const char* Text)
 {
 	ssd1306_Fill(Black);
-	ssd1306_SetCursor(15, 5);
+	ssd1306_SetCursor(30, 30);
 	ssd1306_WriteString((unsigned char*)Text, Font_6x8, White);
 	ssd1306_UpdateScreen();
 }
 
-MENU_ITEM(Menu_1, Menu_2, Menu_3, NULL_MENU, Menu_1_1 , Level1Item1_Select, Level1Item1_Enter, "1");
-MENU_ITEM(Menu_2, Menu_3, Menu_1, NULL_MENU, NULL_MENU, NULL              , NULL             , "2");
-MENU_ITEM(Menu_3, Menu_1, Menu_2, NULL_MENU, NULL_MENU, NULL              , NULL             , "3");
+MENU_ITEM(Menu_1, Menu_2, Menu_3, NULL_MENU, Menu_1_1 , NULL			  , NULL, "1");
+MENU_ITEM(Menu_2, Menu_3, Menu_1, NULL_MENU, NULL_MENU, NULL              , NULL, "2");
+MENU_ITEM(Menu_3, Menu_1, Menu_2, NULL_MENU, NULL_MENU, NULL              , NULL, "3");
 
 MENU_ITEM(Menu_1_1, Menu_1_2, Menu_1_2, NULL_MENU, NULL_MENU, NULL, NULL, "1.1");
 MENU_ITEM(Menu_1_2, Menu_1_1, Menu_1_1, NULL_MENU, NULL_MENU, NULL, NULL, "1.2");
@@ -166,16 +147,11 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-/*
-	  if (HAL_GPIO_ReadPin (GPIOB, GPIO_PIN_12) == 0 ) {
-		  int hui = 0;
-	  }
-	  */
-	//updateGame();
-	  //play_melody();
-	if (millis() % 1 == 0)  button_counter();
-	if (millis() % 10 == 0) button_update();
 
+	//updateGame();
+    //play_melody();
+
+/*
 	if (button_struct.btn_B == PRESSED_LONG){
 		//ssd1306_Fill(Black);
 		ssd1306_DrawRectangle(10, 40 ,SSD1306_WIDTH-1 - 9,SSD1306_HEIGHT-1 - 40,White); //(x1,y1,x2,y1,color);
@@ -194,44 +170,14 @@ int main(void)
 		//ssd1306_UpdateScreen();
 	}
 	else {
-		ssd1306_Fill(Black);
-		ssd1306_UpdateScreen();
+//		ssd1306_Fill(Black);
+//		ssd1306_UpdateScreen();
 		a =0;
 	}
-
+*/
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-
-
-
-
-
-				/*
-				case BUTTON_DOWN:
-					Menu_Navigate(MENU_NEXT);
-					break;
-				case BUTTON_LEFT:
-					Menu_Navigate(MENU_PARENT);
-					break;
-				case BUTTON_RIGHT:
-					Menu_Navigate(MENU_CHILD);
-					break;
-				case BUTTON_ENTER:
-					Menu_EnterCurrentItem();
-
-			   */
-
-
-
-
-
-
-
-
-
-
-
   }
   /* USER CODE END 3 */
 }

@@ -29,7 +29,6 @@ static void (*MenuWriteFunc)(const char* Text) = NULL;
  */
 static Menu_Item_t* CurrentMenuItem = &NULL_MENU;
 
-
 Menu_Item_t* Menu_GetCurrentMenu(void)
 {
 	return CurrentMenuItem;
@@ -46,9 +45,6 @@ void Menu_Navigate(Menu_Item_t* const NewMenu)
 		MenuWriteFunc(CurrentMenuItem->Text);
 
 	void (*SelectCallback)(void) = MENU_ITEM_READ_POINTER(&CurrentMenuItem->SelectCallback);
-
-	//if (SelectCallback)
-		//SelectCallback();
 }
 
 void Menu_SetGenericWriteCallback(void (*WriteFunc)(const char* Text))
@@ -63,7 +59,4 @@ void Menu_EnterCurrentItem(void)
 		return;
 
 	void (*EnterCallback)(void) = MENU_ITEM_READ_POINTER(&CurrentMenuItem->EnterCallback);
-
-	//if (EnterCallback)
-	//	EnterCallback();
 }

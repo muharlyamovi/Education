@@ -16,6 +16,16 @@
 
 #define MENU_ITEM_READ_POINTER(Addr)   (void*)(Addr)
 
+struct flag_menu {
+	 uint8_t flag_m1;
+	 uint8_t flag_m2;
+	 uint8_t flag_m3;
+	 uint8_t flag_m4;
+	 uint8_t flag_m5;
+};
+
+extern struct flag_menu flag_m;
+
 	//#include "MenuConfig.h"
 
 	/** Type define for a menu item. Menu items should be initialized via the helper
@@ -42,10 +52,10 @@
 	 *  \param[in] EnterFunc   Function callback to execute when the menu item is entered, or \c NULL for no callback.
 	 */
 	#define MENU_ITEM(Name, Next, Previous, Parent, Child, SelectFunc, EnterFunc, Text) \
-		extern Menu_Item_t  Next;     \
-		extern Menu_Item_t  Previous; \
-		extern Menu_Item_t  Parent;   \
-		extern Menu_Item_t  Child;  \
+		extern Menu_Item_t  Next;     	\
+		extern Menu_Item_t  Previous;   \
+		extern Menu_Item_t  Parent;     \
+		extern Menu_Item_t  Child;  	\
 		Menu_Item_t  Name = {&Next, &Previous, &Parent, &Child, SelectFunc, EnterFunc, Text}
 
 	/** Relative navigational menu entry for \ref Menu_Navigate(), to move to the menu parent. */

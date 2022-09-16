@@ -202,6 +202,13 @@ void SysTick_Handler(void)
 	if (tone_delay == 0) {
 		//play_melody();
 	}
+
+	if (counter % 1 == 0)  {
+		button_counter();
+	}
+	if (counter % 10 == 0) {
+		button_update();
+	}
   /* USER CODE END SysTick_IRQn 0 */
   HAL_IncTick();
   /* USER CODE BEGIN SysTick_IRQn 1 */
