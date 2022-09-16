@@ -14,7 +14,7 @@
 #include <stdint.h>
 
 
-#define MENU_ITEM_READ_POINTER(Addr)   (void*)(Addr)
+#define MENU_ITEM_READ_POINTER(Addr) (Addr)
 
 struct flag_menu {
 	 uint8_t flag_m1;
@@ -59,16 +59,16 @@ extern struct flag_menu flag_m;
 		Menu_Item_t  Name = {&Next, &Previous, &Parent, &Child, SelectFunc, EnterFunc, Text}
 
 	/** Relative navigational menu entry for \ref Menu_Navigate(), to move to the menu parent. */
-	#define MENU_PARENT         MENU_ITEM_READ_POINTER(&Menu_GetCurrentMenu()->Parent)
+	#define MENU_PARENT         Menu_GetCurrentMenu()->Parent
 
 	/** Relative navigational menu entry for \ref Menu_Navigate(), to move to the menu child. */
-	#define MENU_CHILD          MENU_ITEM_READ_POINTER(&Menu_GetCurrentMenu()->Child)
+	#define MENU_CHILD          Menu_GetCurrentMenu()->Child
 
 	/** Relative navigational menu entry for \ref Menu_Navigate(), to move to the next linked menu item. */
-	#define MENU_NEXT           MENU_ITEM_READ_POINTER(&Menu_GetCurrentMenu()->Next)
+	#define MENU_NEXT           Menu_GetCurrentMenu()->Next
 
 	/** Relative navigational menu entry for \ref Menu_Navigate(), to move to the previous linked menu item. */
-	#define MENU_PREVIOUS       MENU_ITEM_READ_POINTER(&Menu_GetCurrentMenu()->Previous)
+	#define MENU_PREVIOUS       Menu_GetCurrentMenu()->Previous
 
 	/** Null menu entry, used in \ref MENU_ITEM() definitions where no menu link is to be made. */
 	extern Menu_Item_t  NULL_MENU;
