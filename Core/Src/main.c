@@ -75,7 +75,30 @@ enum ButtonValues
 	BUTTON_RIGHT,
 	BUTTON_ENTER,
 };
+enum ButtonValues GetButtonPress(void)
+{
+	return BUTTON_NONE;
+};
+/*** END DUMY CODE ***/
 
+
+/** Example menu item specific enter callback function, run when the associated menu item is entered. */
+static void Level1Item1_Enter(void)
+{
+	ssd1306_Fill(Black);
+	ssd1306_SetCursor(30, 50);
+	ssd1306_WriteString("ENTER", Font_6x8, White);
+	ssd1306_UpdateScreen();
+}
+
+/** Example menu item specific select callback function, run when the associated menu item is selected. */
+static void Level1Item1_Select(void)
+{
+	ssd1306_Fill(Black);
+	ssd1306_SetCursor(30, 50);
+	ssd1306_WriteString("SELECT", Font_6x8, White);
+	ssd1306_UpdateScreen();
+}
 /** Generic function to write the text of a menu.
  *
  *  \param[in] Text   Text of the selected menu to write, in \ref MENU_ITEM_STORAGE memory space
@@ -88,7 +111,7 @@ static void Generic_Write(const char* Text)
 	ssd1306_UpdateScreen();
 }
 
-MENU_ITEM(Menu_1, Menu_2, Menu_3, NULL_MENU, Menu_1_1 , NULL			  , NULL, "1");
+MENU_ITEM(Menu_1, Menu_2, Menu_3, NULL_MENU, Menu_1_1 , Level1Item1_Select, Level1Item1_Enter, "1");
 MENU_ITEM(Menu_2, Menu_3, Menu_1, NULL_MENU, NULL_MENU, NULL              , NULL, "2");
 MENU_ITEM(Menu_3, Menu_1, Menu_2, NULL_MENU, NULL_MENU, NULL              , NULL, "3");
 

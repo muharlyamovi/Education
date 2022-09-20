@@ -80,31 +80,36 @@ void button_update() {
 		}
 		else button_struct.btn_U	= IDLE;
 
-		if (button_struct.btn_U == PRESSED && flag_m.flag_m1 == 0){
+		if (button_struct.btn_U == PRESSED && button_struct.counters_btn[7] < 2 && flag_m.flag_m1 == 0){ //U
 			Menu_Navigate(MENU_PREVIOUS);
 			flag_m.flag_m1 = 1;
 		}
 		else flag_m.flag_m1 = 0;
-		if (button_struct.btn_D == PRESSED && flag_m.flag_m2 == 0){
+
+		if (button_struct.btn_D == PRESSED && button_struct.counters_btn[4] < 2 && flag_m.flag_m2 == 0){ //D
 			Menu_Navigate(MENU_NEXT);
 			flag_m.flag_m2 = 1;
 		}
 		else flag_m.flag_m2 = 0;
-		if (button_struct.btn_L == PRESSED && flag_m.flag_m3 == 0){
+
+		if (button_struct.btn_L == PRESSED && button_struct.counters_btn[6] < 2 && flag_m.flag_m3 == 0){ //L
 			Menu_Navigate(MENU_PARENT);
 			flag_m.flag_m3 = 1;
 		}
 		else flag_m.flag_m3 = 0;
-		if (button_struct.btn_R == PRESSED && flag_m.flag_m4 == 0){
+
+		if (button_struct.btn_R == PRESSED && button_struct.counters_btn[5] < 2 && flag_m.flag_m4 == 0){ //R
 			Menu_Navigate(MENU_CHILD);
 			flag_m.flag_m4 = 1;
 		}
 		else flag_m.flag_m4 = 0;
-		if (button_struct.btn_A == PRESSED && flag_m.flag_m5 == 0){
+
+		if (button_struct.btn_A == PRESSED && button_struct.counters_btn[0] < 2 && flag_m.flag_m5 == 0){ //A
 			Menu_EnterCurrentItem();
 			flag_m.flag_m5 = 1;
 		}
 		else flag_m.flag_m5 = 0;
+
 }
 
 void button_exti (uint16_t GPIO_Pin){
