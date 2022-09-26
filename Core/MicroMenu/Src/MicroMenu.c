@@ -45,6 +45,9 @@ void Menu_Navigate(Menu_Item_t* const NewMenu)
 		MenuWriteFunc(CurrentMenuItem->Text);
 
 	void (*SelectCallback)(void) = CurrentMenuItem->SelectCallback;
+
+	if (SelectCallback)
+		SelectCallback();
 }
 
 void Menu_SetGenericWriteCallback(void (*WriteFunc)(const char* Text))
@@ -59,4 +62,7 @@ void Menu_EnterCurrentItem(void)
 		return;
 
 	void (*EnterCallback)(void) = CurrentMenuItem->EnterCallback;
+
+	if (EnterCallback)
+		EnterCallback();
 }

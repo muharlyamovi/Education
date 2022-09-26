@@ -86,7 +86,7 @@ enum ButtonValues GetButtonPress(void)
 static void Level1Item1_Enter(void)
 {
 	ssd1306_Fill(Black);
-	ssd1306_SetCursor(30, 50);
+	ssd1306_SetCursor(50, 30);
 	ssd1306_WriteString("ENTER", Font_6x8, White);
 	ssd1306_UpdateScreen();
 }
@@ -95,7 +95,7 @@ static void Level1Item1_Enter(void)
 static void Level1Item1_Select(void)
 {
 	ssd1306_Fill(Black);
-	ssd1306_SetCursor(30, 50);
+	ssd1306_SetCursor(50, 30);
 	ssd1306_WriteString("SELECT", Font_6x8, White);
 	ssd1306_UpdateScreen();
 }
