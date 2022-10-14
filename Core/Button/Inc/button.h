@@ -35,6 +35,7 @@ struct btn_struct {
  };
 
 extern struct btn_struct button_struct;
+extern uint8_t cursorY;
 #endif /* BUTTON_INC_BUTTON_H_ */
 
 

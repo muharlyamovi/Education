@@ -63,60 +63,9 @@ void SystemClock_Config(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
-
-
 /*** DUMY CODE ***/
-enum ButtonValues
-{
-	BUTTON_NONE,
-	BUTTON_UP,
-	BUTTON_DOWN,
-	BUTTON_LEFT,
-	BUTTON_RIGHT,
-	BUTTON_ENTER,
-};
-enum ButtonValues GetButtonPress(void)
-{
-	return BUTTON_NONE;
-};
+
 /*** END DUMY CODE ***/
-
-
-/** Example menu item specific enter callback function, run when the associated menu item is entered. */
-static void Level1Item1_Enter(void)
-{
-	ssd1306_Fill(Black);
-	ssd1306_SetCursor(50, 30);
-	ssd1306_WriteString("ENTER", Font_6x8, White);
-	ssd1306_UpdateScreen();
-}
-
-/** Example menu item specific select callback function, run when the associated menu item is selected. */
-static void Level1Item1_Select(void)
-{
-	ssd1306_Fill(Black);
-	ssd1306_SetCursor(50, 30);
-	ssd1306_WriteString("SELECT", Font_6x8, White);
-	ssd1306_UpdateScreen();
-}
-/** Generic function to write the text of a menu.
- *
- *  \param[in] Text   Text of the selected menu to write, in \ref MENU_ITEM_STORAGE memory space
- */
-static void Generic_Write(const char* Text)
-{
-	ssd1306_Fill(Black);
-	ssd1306_SetCursor(30, 30);
-	ssd1306_WriteString((unsigned char*)Text, Font_6x8, White);
-	ssd1306_UpdateScreen();
-}
-
-MENU_ITEM(Menu_1, Menu_2, Menu_3, NULL_MENU, Menu_1_1 , Level1Item1_Select, Level1Item1_Enter, "1");
-MENU_ITEM(Menu_2, Menu_3, Menu_1, NULL_MENU, NULL_MENU, NULL              , NULL, "2");
-MENU_ITEM(Menu_3, Menu_1, Menu_2, NULL_MENU, NULL_MENU, NULL              , NULL, "3");
-
-MENU_ITEM(Menu_1_1, Menu_1_2, Menu_1_2, Menu_1, NULL_MENU, NULL, NULL, "1.1");
-MENU_ITEM(Menu_1_2, Menu_1_1, Menu_1_1, Menu_1, NULL_MENU, NULL, NULL, "1.2");
 
 /* USER CODE END 0 */
 
@@ -153,15 +102,15 @@ int main(void)
   MX_RNG_Init();
   MX_TIM4_Init();
   /* USER CODE BEGIN 2 */
-  uint8_t a=0;
+  //uint8_t a=0;
   //uint32_t osc = HAL_RCC_GetSysClockFreq();
   ssd1306_Init();
   HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_4);
 
 
 	/* Set up the default menu text write callback, and navigate to an absolute menu item entry. */
-	Menu_SetGenericWriteCallback(Generic_Write);
-	Menu_Navigate(&Menu_1);
+	//Menu_SetGenericWriteCallback(Generic_Write);
+	//Menu_Navigate(&Menu_1);
 
 
   /* USER CODE END 2 */
@@ -170,6 +119,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	 Menu_General();
 
 	//updateGame();
     //play_melody();

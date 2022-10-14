@@ -83,32 +83,39 @@ void button_update() {
 		if (button_struct.btn_U == PRESSED && button_struct.counters_btn[7] < 2 && flag_m.flag_m1 == 0){ //U
 			Menu_Navigate(MENU_PREVIOUS);
 			flag_m.flag_m1 = 1;
+			cursorY--;
 		}
 		else flag_m.flag_m1 = 0;
 
 		if (button_struct.btn_D == PRESSED && button_struct.counters_btn[4] < 2 && flag_m.flag_m2 == 0){ //D
 			Menu_Navigate(MENU_NEXT);
 			flag_m.flag_m2 = 1;
+			cursorY++;
 		}
 		else flag_m.flag_m2 = 0;
 
 		if (button_struct.btn_L == PRESSED && button_struct.counters_btn[6] < 2 && flag_m.flag_m3 == 0){ //L
 			Menu_Navigate(MENU_PARENT);
 			flag_m.flag_m3 = 1;
+			cursorY = 0;
 		}
 		else flag_m.flag_m3 = 0;
 
 		if (button_struct.btn_R == PRESSED && button_struct.counters_btn[5] < 2 && flag_m.flag_m4 == 0){ //R
 			Menu_Navigate(MENU_CHILD);
 			flag_m.flag_m4 = 1;
+			cursorY = 0;
 		}
 		else flag_m.flag_m4 = 0;
 
 		if (button_struct.btn_A == PRESSED && button_struct.counters_btn[0] < 2 && flag_m.flag_m5 == 0){ //A
-			Menu_EnterCurrentItem();
+			//Menu_EnterCurrentItem();
 			flag_m.flag_m5 = 1;
 		}
 		else flag_m.flag_m5 = 0;
+
+		if (cursorY > 7 && cursorY != 255) cursorY = 7;
+	  	if (cursorY == 0 || cursorY == 255) cursorY = 0;
 
 }
 

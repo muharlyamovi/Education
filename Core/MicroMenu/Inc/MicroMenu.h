@@ -12,9 +12,15 @@
 
 #include <stddef.h>
 #include <stdint.h>
-
+#include "ssd1306.h"
 
 #define MENU_ITEM_READ_POINTER(Addr) (Addr)
+#define MENU_ITEM(Name, Next, Previous, Parent, Child, SelectFunc, EnterFunc, Text) \
+	extern Menu_Item_t  Next;     	\
+	extern Menu_Item_t  Previous;   \
+	extern Menu_Item_t  Parent;     \
+	extern Menu_Item_t  Child;  	\
+	Menu_Item_t  Name = {&Next, &Previous, &Parent, &Child, SelectFunc, EnterFunc, Text}
 
 struct flag_menu {
 	 uint8_t flag_m1;
@@ -28,9 +34,9 @@ extern struct flag_menu flag_m;
 
 	//#include "MenuConfig.h"
 
-	/** Type define for a menu item. Menu items should be initialized via the helper
-	 *  macro \ref MENU_ITEM(), not created from this type directly in user-code.
-	 */
+/** Введите определение для пункта меню. Пункты меню должны быть инициализированы через хелпер
+* макрос \ref MENU_ITEM(), не созданный из этого типа непосредственно в пользовательском коде.
+*/
 	typedef const struct Menu_Item {
 		const struct Menu_Item *Next; /**< Pointer to the next menu item of this menu item */
 		const struct Menu_Item *Previous; /**< Pointer to the previous menu item of this menu item */
@@ -41,36 +47,30 @@ extern struct flag_menu flag_m;
 		const char Text[]; /**< Menu item text to pass to the menu display callback function */
 	} Menu_Item_t;
 
-	/** Creates a new menu item entry with the specified links and callbacks.
-	 *
-	 *  \param[in] Name      Name of the menu entry, must be unique.
-	 *  \param[in] Next      Name of the next linked menu item, or \ref NULL_MENU if no menu link.
-	 *  \param[in] Previous  Name of the previous linked menu item, or \ref NULL_MENU if no menu link.
-	 *  \param[in] Parent    Name of the parent linked menu item, or \ref NULL_MENU if no menu link.
-	 *  \param[in] Child     Name of the child linked menu item, or \ref NULL_MENU if no menu link.
-	 *  \param[in] SelectFunc  Function callback to execute when the menu item is selected, or \c NULL for no callback.
-	 *  \param[in] EnterFunc   Function callback to execute when the menu item is entered, or \c NULL for no callback.
-	 */
-	#define MENU_ITEM(Name, Next, Previous, Parent, Child, SelectFunc, EnterFunc, Text) \
-		extern Menu_Item_t  Next;     	\
-		extern Menu_Item_t  Previous;   \
-		extern Menu_Item_t  Parent;     \
-		extern Menu_Item_t  Child;  	\
-		Menu_Item_t  Name = {&Next, &Previous, &Parent, &Child, SelectFunc, EnterFunc, Text}
+	/** Создает новую запись пункта меню с указанными ссылками и обратными вызовами.
+	*
+	* \param[in] Name Имя пункта меню должно быть уникальным.
+	* \param[in] Next Имя следующего связанного пункта меню или \ref NULL_MENU, если нет ссылки на меню.
+	* \param[in] Previous Имя предыдущего связанного пункта меню или \ref NULL_MENU, если ссылка на меню отсутствует.
+	* \param[in] Parent Имя связанного с родительским пунктом меню или \ref NULL_MENU, если ссылка на меню отсутствует.
+	* \param[in] Child Имя связанного с дочерним пунктом меню или \ref NULL_MENU, если ссылка на меню отсутствует.
+	* \param[in] SelectFunc Обратный вызов функции для выполнения при выборе пункта меню или \c NULL, если нет обратного вызова.
+	* \param[in] EnterFunc Обратный вызов функции, выполняемый при входе в пункт меню, или \c NULL, если нет обратного вызова.
+	*/
 
-	/** Relative navigational menu entry for \ref Menu_Navigate(), to move to the menu parent. */
+	/** Относительная запись меню навигации для \reef Menu Navigate(), чтобы перейти к родительскому меню. */
 	#define MENU_PARENT         Menu_GetCurrentMenu()->Parent
 
-	/** Relative navigational menu entry for \ref Menu_Navigate(), to move to the menu child. */
+	/** Относительная запись меню навигации для \reef Menu Navigate(), чтобы перейти к дочернему меню. */
 	#define MENU_CHILD          Menu_GetCurrentMenu()->Child
 
-	/** Relative navigational menu entry for \ref Menu_Navigate(), to move to the next linked menu item. */
+	/** Относительная навигационная запись меню для \ref Menu_Navigate() для перехода к следующему связанному элементу меню. */
 	#define MENU_NEXT           Menu_GetCurrentMenu()->Next
 
-	/** Relative navigational menu entry for \ref Menu_Navigate(), to move to the previous linked menu item. */
+	/** Относительная навигационная запись меню для \ref Menu_Navigate(), чтобы перейти к предыдущему связанному элементу меню. */
 	#define MENU_PREVIOUS       Menu_GetCurrentMenu()->Previous
 
-	/** Null menu entry, used in \ref MENU_ITEM() definitions where no menu link is to be made. */
+	/** Пустая запись меню, используемая в определениях \ref MENU_ITEM(), где не должно быть ссылки на меню. */
 	extern Menu_Item_t  NULL_MENU;
 
 	/** Retrieves the currently selected meny item.
@@ -79,22 +79,26 @@ extern struct flag_menu flag_m;
 	 */
 	Menu_Item_t* Menu_GetCurrentMenu(void);
 
-	/** Navigates to an absolute or relative menu entry.
-	 *
-	 * \param[in] NewMenu  Pointer to the absolute menu item to select, or one of \ref MENU_PARENT,
-	 *                     \ref MENU_CHILD, \ref MENU_NEXT or \ref MENU_PREVIOUS for relative navigation.
-	 */
+	/** Переход к абсолютному или относительному элементу меню.
+	*
+	* \param[in] NewMenu Указатель на абсолютный пункт меню для выбора или один из \ref MENU_PARENT,
+	* \ref MENU_CHILD, \ref MENU_NEXT или \ref MENU_PREVIOUS для относительной навигации.
+	*/
 	void Menu_Navigate(Menu_Item_t* const NewMenu);
 
-	/** Configures the menu text write callback function, fired for all menu items. Within this callback
-	 *  function the user should implement code to display the current menu text stored in \ref MENU_ITEM_STORAGE
-	 *  memory space.
-	 *
-	 *  \ref WriteFunc  Pointer to a callback function to execute for each selected menu item.
-	 */
+	/** Настраивает функцию обратного вызова записи текста меню, запускаемую для всех пунктов меню. В этом обратном вызове
+	* функция, которую пользователь должен реализовать в коде для отображения текущего текста меню, хранящегося в \ref MENU_ITEM_STORAGE
+	* объем памяти.
+	*
+	* \ref WriteFunc Указатель на функцию обратного вызова, которая будет выполняться для каждого выбранного пункта меню.
+	*/
 	void Menu_SetGenericWriteCallback(void (*WriteFunc)(const char* Text));
 
-	/** Enters the currently selected menu item, running its configured callback function (if any). */
+	/** Вход в текущий выбранный пункт меню, запуск его настроенной функции обратного вызова (если есть). */
 	void Menu_EnterCurrentItem(void);
+	void Menu_General(void);
+	void Level1Item1_Enter(void);
+	void Level1Item1_Select(void);
+	//static void Generic_Write(const char* Text);
 
 #endif
